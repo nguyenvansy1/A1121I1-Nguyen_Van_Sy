@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const donGia = 1678;
+    let sanLuong =parseFloat(prompt('nhập sản lượng điện tiêu thụ(kwh)',0));
+    // giá tiền = đơn giá * sản lượng tiêu thụ + thuế 10%
+    let money = donGia * sanLuong + 0.1* donGia*sanLuong;
+    document.write('Giá tiền điện của bạn là: '+money.toFixed(2)+' VNĐ');
+</script>
+</body>
+</html>

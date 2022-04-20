@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+class  Temperature {
+    constructor(celsius) {
+        this.celsius = celsius;
+    }
+    swapF()
+    {
+        return this.celsius*1.8 + 32;
+    }
+    swapK()
+    {
+        return this.celsius + 273.15;
+    }
+
+}
+let input = parseInt(prompt("Nhập C :"));
+let c = new Temperature(input);
+document.write("C --> F :" + c.swapF() + "<br>");
+document.write("C --> K :" + c.swapK());
+</script>
+</body>
+</html>

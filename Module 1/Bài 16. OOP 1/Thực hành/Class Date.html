@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Date {
+        constructor(day,month,year) {
+            this.day = day ;
+            this.month = month ;
+            this.year = year ;
+        }
+        setDay(newday) {
+            this.day = newday ;
+        }
+        getDay() {
+            return this.day ;
+        }
+
+        setMonth(newmonth) {
+            this.month = newmonth ;
+        }
+        getMonth() {
+            return this.month ;
+        }
+
+        setYear(newyear) {
+            this.year = newyear ;
+        }
+        getYear() {
+            return this.year ;
+        }
+
+        setDate(day,month,year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+
+        }
+        toString(){
+            return this.day+"/"+this.month+"/"+this.year;
+        }
+    }
+    let date = new Date(2,2,2007);
+
+    let day = date.getDay();
+    document.write(day + "</br>");
+    let month = date.getMonth();
+    document.write(month + "</br>");
+    let year = date.getYear();
+    document.write(year + "</br>" );
+    document.write(day + "/" + month + "/" + year+ "</br>" );
+
+    date.setDate(1,1,2001)
+    document.write(date.toString())
+
+</script>
+</body>
+</html>

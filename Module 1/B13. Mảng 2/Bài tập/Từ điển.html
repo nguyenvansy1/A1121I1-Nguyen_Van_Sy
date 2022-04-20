@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sỹ Nguyễn</title>
+</head>
+<body>
+<form>
+    <p>Dịch tiếng Anh</p>
+    <input type="text" id="text"/>
+    <input type="button" id="btnDich" value="Dịch" onclick="dich();"/>
+    <p id="viet"/>
+</form>
+<script>
+    let count = 0;
+    let anh = document.getElementById("text");
+    let mTA = ["hello", "bye", "dog", "cat"];
+    let mTV = ["chào", "tạm biệt", "con chó", "con mèo"];
+    document.write("Chỉ có thể dịch được các từ [" + mTA.join(" ") + "]")
+
+    function dich() {
+        for (let i = 0; i < mTA.length; i++) {
+            if (mTA[i] === text.value) {
+                count = 0;
+                document.getElementById("viet").innerHTML = mTV[i];
+                break;
+            } else {
+                count++;
+            }
+        }
+        if (count != 0) {
+            alert("loi");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight ;
+        }
+        setWeight(weight) {
+            this.weight = weight;
+        }
+        getWeight()
+        {
+            return this.weight ;
+        }
+    }
+
+    class Human {
+        constructor(name,gender,weight) {
+            this.name = name ;
+            this.gender = gender ;
+            this.weight = weight ;
+        }
+        setName(name) {
+            this.name = name ;
+        }
+        getName()
+        {
+            return this.name;
+        }
+
+        setGender(gender) {
+            this.gender = gender ;
+        }
+        getGender()
+        {
+            return this.gender;
+        }
+
+        setWeight(weight) {
+            this.weight = weight ;
+        }
+        getWeight()
+        {
+            return this.weight;
+        }
+        say(str){
+            document.write("Say : " + str)
+        }
+
+
+        eat(apple){
+            if (apple.weight > 0){
+                apple.weight--;
+                this.weight++;
+            } else {
+                document.write("Không ăn được táo");
+            }
+        }
+    }
+
+    let apple = new Apple(10);
+    let human = new Human('Adam','Nam',50);
+    human.say('My name is Adam');
+
+    human.eat(apple) ;
+    document.write("<br>");
+    document.write("Cân nặng sau khi ăn táo:  = " + human.weight);
+    document.write("<br>");
+    document.write("Khối lượng quả táo = " + apple.weight);
+</script>
+</body>
+</html>

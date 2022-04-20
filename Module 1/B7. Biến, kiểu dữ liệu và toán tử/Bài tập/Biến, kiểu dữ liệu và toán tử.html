@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sỹ Nguyễn</title>
+</head>
+<body>
+<script>
+    let vatLy = parseInt(prompt("Nhập điểm vật lý"));
+    let hoaHoc = parseInt(prompt("Nhập điểm vật hóa"));
+    let sinhHoc = parseInt(prompt("Nhập điểm vật sinh"));
+    let average = (vatLy+hoaHoc+sinhHoc)/3 ;
+    document.write("Điểm trung bình:"  +average);
+    document.write("<br>");
+    let sum = vatLy+hoaHoc+sinhHoc;
+    document.write("Tổng điểm:" +sum);
+    document.write("<br>");
+
+    let cel = parseInt(prompt("Nhập độ C:"));
+    let fah = (cel/5)*9+32;
+    document.write("Độ F:" + fah);
+
+    document.write("<br>");
+    const PI = 3.14;
+    let banKinh = parseInt(prompt("Mời bạn nhập bán kính:"));
+    let chuVi = banKinh*PI;
+    document.write("Chu vi hình tròn:" + chuVi);
+    document.write("<br>");
+    let dienTich = banKinh*banKinh*PI;
+    document.write("Chu vi hình tròn:" + dienTich);
+
+</script>
+</body>
+</html>

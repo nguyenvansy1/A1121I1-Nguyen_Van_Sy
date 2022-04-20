@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sỹ Nguyễn</title>
+    <link rel="stylesheet" href="button.css">
+</head>
+<body>
+<style>
+     #dayso {
+        background-color: white;
+        margin-left: 24px;
+        font-size: xx-large;
+        color: blue;
+        text-align: right;
+        border: 2px solid black;
+        width: 250px;
+        height: 35px;
+    }
+    button {
+        font-size: xx-large;
+        width: 50px;
+        color: blue;
+        margin-left: 0px;
+    }
+
+     #con {
+         border: 4px solid black;
+         height: 330px;
+         width: 300px;
+         margin-left: 230px;
+         background-color: pink;
+     }
+     .but {
+         margin-top: 20px;
+         margin-left: 35px;
+     }
+
+</style>
+<div id="con">
+    <br>
+    <div id="dayso"></div>
+        <div id="chinhso">
+    <button onclick="toan_hang(1)" class="but">1</button>
+    <button style="margin-left: 5px" onclick="toan_hang(2)">2</button>
+    <button style="margin-left: 5px" onclick="toan_hang(3)">3</button>
+    <button style="margin-left: 5px" onclick="toan_tu('+')">+</button>
+    <br>
+
+    <button onclick="toan_hang(4)" class="but">4</button>
+    <button style="margin-left: 5px" onclick="toan_hang(5)">5</button>
+    <button style="margin-left: 5px" onclick="toan_hang(6)">6</button>
+    <button style="margin-left: 5px" onclick="toan_tu('-')">-</button>
+    <br>
+
+    <button onclick="toan_hang(7)" class="but">7</button>
+    <button style="margin-left: 5px" onclick="toan_hang(8)" >8</button>
+    <button style="margin-left: 5px" onclick="toan_hang(9)">9</button>
+    <button style="margin-left: 5px" onclick="toan_tu('*')">x</button>
+    <br>
+
+    <button onclick="reset()" class="but">C</button>
+    <button style="margin-left: 5px" onclick="toan_hang(0)" >0</button>
+    <button style="margin-left: 5px" onclick="tinh_toan()">=</button>
+    <button style="margin-left: 5px" onclick="toan_tu('/')" >/</button>
+    <br>
+
+</div>
+
+
+
+<script>
+
+function toan_hang(number) {
+    let result = document.getElementById("dayso").innerHTML  ;
+    result = result +number;
+    document.getElementById("dayso").innerText = result;
+}
+
+function toan_tu(pt) {
+    let result = document.getElementById("dayso").innerHTML  ;
+    result = result + pt;
+    document.getElementById("dayso").innerText = result;
+}
+
+function tinh_toan() {
+    let result = document.getElementById("dayso").innerHTML ;
+    result = eval(result);
+    document.getElementById("dayso").innerText = result;
+}
+
+function reset() {
+    document.getElementById("dayso").innerText = "";
+}
+
+
+
+</script>
+</body>
+</html>

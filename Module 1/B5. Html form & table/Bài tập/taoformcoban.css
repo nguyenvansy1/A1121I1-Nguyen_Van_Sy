@@ -1,0 +1,24 @@
+#nav {
+    width: 700px;
+    height: 350px;
+background-color: yellow;
+}
+.coler {
+ background-color: black;
+}
+.coler2 {
+    background-color: white;
+}
+
+ .table1 {
+     width: 100%;
+     border-collapse: collapse;
+     border: white;
+     text-align: center;
+ }
+ .table2 {
+     width: 100%;
+     border-collapse: collapse;
+     text-align: center;
+
+ }

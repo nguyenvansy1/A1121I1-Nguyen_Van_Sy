@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sỹ Nguyễn</title>
+</head>
+<body>
+<script>
+    let diemkt = prompt("Nhập điểm:");
+    let diemgk = prompt("Nhập điểm:");
+    let diemctk = prompt("Nhập điểm:");
+    let result = (diemkt+diemgk*2+diemctk*3)/6;
+    if(result>8)
+        document.write("Học sinh giỏi")
+     else {
+        if (result > 6.5)
+            document.write("Học sinh khá")
+        else if (result > 5)
+            document.write("Học sinh trung bình")
+        else if (result > 3.5)
+            document.write("Học sinh yếu")
+    }
+</script>
+</body>
+</html>

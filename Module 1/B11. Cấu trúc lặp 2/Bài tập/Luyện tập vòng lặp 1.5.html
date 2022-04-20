@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sỹ Nguyễn</title>
+</head>
+<body>
+<p>Tính tổng 20 số đầu tiên trong dãy fibonacci</p>
+<p id="result" ></p>
+<script>
+    let result;
+    let temp;
+    let count=0;
+    let a = 0, b = 1;
+    result = a;
+    while(count < 20){
+        temp = b;
+        b = a + b;
+        a = temp;
+        result += temp;
+        count++;
+    }
+    document.getElementById("result").innerHTML = result;
+</script>
+</body>
+</html>

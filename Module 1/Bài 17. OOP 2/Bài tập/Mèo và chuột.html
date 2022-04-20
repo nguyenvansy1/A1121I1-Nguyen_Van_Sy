@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name,weight,speed,status) {
+            this.name = name ;
+            this.weight = weight ;
+            this.speed = speed ;
+            this.status = status ;
+        }
+        say(str)
+        {
+            document.write(str);
+        }
+
+    }
+    class Cat {
+        constructor(name,weight,speed) {
+            this.name = name ;
+            this.weight = weight ;
+            this.speed = speed ;
+        }
+        say(str)
+        {
+            document.write(str);
+        }
+        catchRat(rat){
+            if (this.speed > rat.speed){
+                alert("Bắt được chuột ");
+            }else {
+                alert("Không bắt được chuột");
+            }
+        }
+        eatRat(rat){
+            if (rat.status === 'live'){
+                document.write("Đang ăn con chuột..");
+                document.write("<br>")
+                document.write("Khối lượng con mèo sau khi ăn chuột: ");
+                this.weight += rat.weight;
+
+            }else{
+                alert("Con chuột chết rồi!")
+            }
+        }
+    }
+
+    let rat = new Rat("Jerry",1,20,'live');
+    let cat = new Cat("Tom",10,21);
+    rat.say('chít chít');
+    document.write("<br>")
+    cat.say('meo meo');
+    document.write("<br>")
+    cat.catchRat(rat);
+    cat.eatRat(rat);
+    document.write(cat.weight);
+
+</script>
+</body>
+</html>

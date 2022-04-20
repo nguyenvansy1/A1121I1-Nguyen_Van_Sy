@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findMin(a, b, c){
+        let min = a;
+        if(min>b){
+            min = b;
+        }
+        if(min>c){
+            min=c;
+        }
+       return min
+    }
+    let a = parseInt(prompt("Nhập a : "));
+    let b = parseInt(prompt("Nhập b : "));
+    let c = parseInt(prompt("Nhập c : "));
+    min = findMin(a,b,c);
+   document.write(min)
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sales = prompt('Nhập vào khoản doanh số bán hàng:(*1000.000)');
+    const number =100000;
+    if(sales>=100){
+        document.write('Mức hoa hồng đạt được là 2% tương đương là: ' +(sales*0.02*number));
+    }
+    else if(sales>=50){
+        document.write('Mức hoa hồng đạt được là 1% tương đương là: ' +(sales*0.01*number));
+    }
+    else if(sales >=10){
+        document.write('Mức hoa hồng đạt được là 0.5% tương đương là: ' +(sales*0.005*number));
+    }
+    else{
+        document.write('Không đủ điều kiện nhân mức hoa hồng');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const number =1000;
+    let cuocPhi =0;
+    let time =prompt('Thời lượng cuộc gọi');
+    if(time>=60){
+        cuocPhi=time*0.7;
+    }
+    else if(time>=30){
+        cuocPhi=time*0.8;
+    }
+    else if(time>=10){
+        cuocPhi=time*0.9;
+    }
+    else{
+        cuocPhi=time;
+    }
+    document.write('Thời lượng cuộc gọi của bạn là: '+time+ ' với phí cuộc gọi là: '+cuocPhi*number+'VNĐ');
+</script>
+</body>
+</html>

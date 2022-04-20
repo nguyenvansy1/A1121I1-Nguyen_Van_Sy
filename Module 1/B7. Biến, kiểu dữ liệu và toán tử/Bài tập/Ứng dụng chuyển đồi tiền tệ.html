@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SỸ Nguyễn</title>
+</head>
+<body>
+<form action="#">
+    <span   style="margin-left: 50px">Amount</span>
+    <span style="margin-left: 150px">From Currency</span>
+    <span style="margin-left: 150px">To Currency</span>
+    <br>
+    <br>
+    <input   id="Amount" style="width: 150px" type="text" name="Amount">
+    <select style="margin-left: 100px" name="From Curency" id="1" >
+        <option value="1">VietNam</option>
+        <option value="2">VietNam1</option>
+        <option value="3">VietNam2</option>
+    </select>
+    <select style="margin-left: 170px" name="To Curency" id="2">
+        <option value="1">USD</option>
+        <option value="2">USD1</option>
+        <option value="3">USD2</option>
+    </select>
+    <button onclick="Convert()" style="margin-left: 50px">Convert</button>
+    <p style="color: blue" id="Result"></p>
+</form>
+<script>
+    let amount = document.getElementById("Amount")
+
+    function Convert() {
+        let result = parseInt(amount.value)/23000;
+        document.getElementById("Result").innerText="Result:" +result;
+    }
+</script>
+</body>
+</html>

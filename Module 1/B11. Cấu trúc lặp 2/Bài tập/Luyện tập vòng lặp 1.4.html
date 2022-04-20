@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sỹ Nguyễn</title>
+</head>
+<body>
+<script>
+    let f1 = 1;
+    let f2 = 1;
+    let f3;
+    while (true){
+        f3 = f1 + f2;
+        if(f3 % 5 == 0){
+            document.write(f3);
+            break;
+        }
+        f1 = f2;
+        f2 = f3;
+    }
+</script>
+</body>
+</html>
