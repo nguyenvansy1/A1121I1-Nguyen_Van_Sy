@@ -330,18 +330,68 @@ join hop_dong_chi_tiet hdct on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
 group by dvdk.ma_dich_vu_di_kem
 );
 select * from max1
-where so_luong = (select max(so_luong) from max1)
+where so_luong = (select max(so_luong) from max1);
+drop table max1;
 
 -- 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. Thông tin hiển thị bao gồm 
 --      ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).
+select hop_dong.ma_hop_dong,loai_dich_vu.ten_loai_dich_vu,dvdk.ten_dich_vu_di_kem,count(hdct.ma_dich_vu_di_kem) as so_lan_su_dung from hop_dong
+left join dich_vu on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu
+left join loai_dich_vu on loai_dich_vu.ma_loai_dich_vu = dich_vu.ma_loai_dich_vu
+left join hop_dong_chi_tiet hdct on hdct.ma_hop_dong = hop_dong.ma_hop_dong
+left join dich_vu_di_kem dvdk on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
+group by hdct.ma_dich_vu_di_kem
+having so_lan_su_dung = 1
+order by hop_dong.ma_hop_dong;
+
 -- 15.	Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi mới chỉ lập được tối đa 3 hợp đồng
 --      từ năm 2020 đến 2021.
+
+select nhan_vien.ma_nhan_vien, nhan_vien.ho_ten,trinh_do.ten_trinh_do,bo_phan.ten_bo_phan,nhan_vien.so_dien_thoai,nhan_vien.dia_chi,count(hop_dong.ma_nhan_vien) as so_luong_hop_dong from nhan_vien
+join trinh_do on trinh_do.ma_trinh_do = nhan_vien.ma_trinh_do
+join bo_phan on bo_phan.ma_bo_phan = nhan_vien.ma_bo_phan
+join hop_dong on hop_dong.ma_nhan_vien = nhan_vien.ma_nhan_vien
+where year(hop_dong.ngay_lam_hop_dong) between 2020 and 2021
+group by hop_dong.ma_nhan_vien
+having so_luong_hop_dong <=3
+order by nhan_vien.ma_nhan_vien;
+
 -- 16.	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2019 đến năm 2021.
+
+delete from nhan_vien
+where nhan_vien.ma_nhan_vien not in (select hop_dong.ma_nhan_vien from hop_dong 
+where year(hop_dong.ngay_lam_hop_dong) between 2019 and 2021);
+
 -- 17.	Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond, chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán 
 --      trong năm 2021 là lớn hơn 10.000.000 VNĐ.
+
+update khach_hang
+left join hop_dong on hop_dong.ma_khach_hang = khach_hang.ma_khach_hang
+left join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
+left join dich_vu on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu
+left join dich_vu_di_kem on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
+set khach_hang.ma_loai_khach = 1
+where khach_hang.ma_loai_khach  = 2 and (dich_vu.chi_phi_thue + (hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia)) > 10000000 and year(hop_dong.ngay_lam_hop_dong) = 2021;
+
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
+
 -- 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
+create table check_so_luong(
+select dvdk.ma_dich_vu_di_kem,dvdk.ten_dich_vu_di_kem,sum(hdct.so_luong) as so_luong from dich_vu_di_kem dvdk
+join hop_dong_chi_tiet hdct on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+group by dvdk.ma_dich_vu_di_kem
+having so_luong >10);
+
+update dich_vu_di_kem
+left join hop_dong_chi_tiet on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem
+left join hop_dong on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+set dich_vu_di_kem.gia = dich_vu_di_kem.gia*2
+where year(hop_dong.ngay_lam_hop_dong) = 2020 and dich_vu_di_kem.ma_dich_vu_di_kem in (select check_so_luong.ma_dich_vu_di_kem from check_so_luong);
+drop table check_so_luong;
+
 -- 20.	Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống, thông tin hiển thị bao gồm 
 --      id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
-
+select nhan_vien.ma_nhan_vien,nhan_vien.ho_ten,nhan_vien.email,nhan_vien.so_dien_thoai,nhan_vien.ngay_sinh,nhan_vien.dia_chi from nhan_vien
+union all
+select khach_hang.ma_khach_hang,khach_hang.ho_ten,khach_hang.email,khach_hang.so_dien_thoai,khach_hang.ngay_sinh,khach_hang.dia_chi from khach_hang
 
