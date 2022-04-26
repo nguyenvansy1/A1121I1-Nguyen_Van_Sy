@@ -1,4 +1,4 @@
-use case_studydb;
+use case_study;
 
 CREATE TABLE vi_tri (
 ma_vi_tri INT PRIMARY KEY AUTO_INCREMENT,
@@ -92,9 +92,9 @@ tien_dat_coc DOUBLE,
 ma_nhan_vien INT,
 ma_khach_hang INT,
 ma_dich_vu INT,
-FOREIGN KEY (ma_nhan_vien) REFERENCES nhan_vien(ma_nhan_vien),
-FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang(ma_khach_hang),
-FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu(ma_dich_vu)
+CONSTRAINT fk_ma_nhan_vien FOREIGN KEY (ma_nhan_vien) REFERENCES nhan_vien(ma_nhan_vien),
+CONSTRAINT fk_ma_khach_hang FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang(ma_khach_hang),
+CONSTRAINT fk_ma_dich_vu FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu(ma_dich_vu)
 );
 
 CREATE TABLE hop_dong_chi_tiet (
@@ -102,7 +102,7 @@ ma_hop_dong_chi_tiet INT PRIMARY KEY AUTO_INCREMENT,
 ma_hop_dong INT,
 ma_dich_vu_di_kem INT,
 so_luong INT,
-FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong),
+CONSTRAINT fk_ma_hop_dong  FOREIGN KEY (ma_hop_dong) REFERENCES hop_dong(ma_hop_dong),
 FOREIGN KEY (ma_dich_vu_di_kem) REFERENCES dich_vu_di_kem(ma_dich_vu_di_kem)
 );
 
@@ -220,7 +220,10 @@ SELECT * FROM hop_dong_chi_tiet;
 -- ----------------------------------Query----------------------------------------------
 
 -- 1.
--- 2.
+-- 2.	Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự
+select * from nhan_vien
+where (SUBSTR( nhan_vien.ho_ten, 1,  1 ) ='H' or SUBSTR( nhan_vien.ho_ten, 1,  1 ) ='T' or SUBSTR( nhan_vien.ho_ten, 1,  1 ) ='K') 
+and length(nhan_vien.ho_ten)>15;
 
 -- 3. Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 
@@ -325,9 +328,10 @@ group by hop_dong.ma_hop_dong;
 -- 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
 
 create table max1(
-select dvdk.ma_dich_vu_di_kem,dvdk.ten_dich_vu_di_kem,sum(hdct.so_luong) as so_luong from dich_vu_di_kem dvdk
+select dvdk.ma_dich_vu_di_kem,dvdk.ten_dich_vu_di_kem,sum(hdct.so_luong) as so_luong from dich_vu_di_kem dvdk 
 join hop_dong_chi_tiet hdct on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
 group by dvdk.ma_dich_vu_di_kem
+order by  dvdk.ma_dich_vu_di_kem
 );
 select * from max1
 where so_luong = (select max(so_luong) from max1);
@@ -374,6 +378,35 @@ set khach_hang.ma_loai_khach = 1
 where khach_hang.ma_loai_khach  = 2 and (dich_vu.chi_phi_thue + (hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia)) > 10000000 and year(hop_dong.ngay_lam_hop_dong) = 2021;
 
 -- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
+-- Để xóa được Foreign Key thì bạn phải biết tên của nó là gì, mà tên chỉ tồn tại trong trường hợp ta có sử dụng từ khóa CONSTRAINT lúc tạo khóa, 
+-- vì vậy khuyến khích bạn sử dụng CONSTRAINT để tạo khóa ngoại.
+
+alter table hop_dong drop constraint fk_ma_khach_hang;
+alter table hop_dong drop constraint fk_ma_nhan_vien;
+alter table hop_dong drop constraint fk_ma_dich_vu;
+alter table hop_dong_chi_tiet drop constraint fk_ma_dich_vu;
+alter table hop_dong
+add constraint fk_ma_khach_hang
+foreign key (ma_khach_hang) references khach_hang(ma_khach_hang) on delete cascade;
+alter table hop_dong
+add constraint fk_ma_nhan_vien
+foreign key (ma_nhan_vien) references nhan_vien(ma_nhan_vien) on delete cascade;
+alter table hop_dong
+add constraint fk_ma_dich_vu
+foreign key (ma_dich_vu) references dich_vu(ma_dich_vu) on delete cascade;
+-- Chỉ định dữ liệu con sẽ bị xóa khi dữ liệu mẹ bị xóa.
+
+
+delete from hop_dong
+where year(hop_dong.ngay_lam_hop_dong) < 2021;
+delete from khach_hang
+where khach_hang.ma_khach_hang in (select hop_dong.ma_khach_hang from hop_dong where year(hop_dong.ngay_lam_hop_dong) < 2021);
+
+
+delete from hop_dong
+where year(hop_dong.ngay_lam_hop_dong) < 2021;
+delete from khach_hang
+where khach_hang.ma_khach_hang in (select hop_dong.ma_khach_hang from hop_dong where year(hop_dong.ngay_lam_hop_dong) < 2021);
 
 -- 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
 create table check_so_luong(
@@ -393,5 +426,43 @@ drop table check_so_luong;
 --      id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
 select nhan_vien.ma_nhan_vien,nhan_vien.ho_ten,nhan_vien.email,nhan_vien.so_dien_thoai,nhan_vien.ngay_sinh,nhan_vien.dia_chi from nhan_vien
 union all
-select khach_hang.ma_khach_hang,khach_hang.ho_ten,khach_hang.email,khach_hang.so_dien_thoai,khach_hang.ngay_sinh,khach_hang.dia_chi from khach_hang
+select khach_hang.ma_khach_hang,khach_hang.ho_ten,khach_hang.email,khach_hang.so_dien_thoai,khach_hang.ngay_sinh,khach_hang.dia_chi from khach_hang;
 
+-- 21.	Tạo khung nhìn có tên là v_nhan_vien để lấy được thông tin của tất cả các nhân viên có địa chỉ là “Đà Nẵng” và đã từng lập hợp đồng cho 
+--      một hoặc nhiều khách hàng bất kì với ngày lập hợp đồng là “2021-04-25”.
+
+create view v_nhan_vien
+as
+select nv.ma_nhan_vien,nv.ho_ten,nv.dia_chi from nhan_vien nv
+join hop_dong hd on hd.ma_nhan_vien = nv.ma_nhan_vien
+where nv.dia_chi like '%Đà Nẵng' and datediff(hd.ngay_lam_hop_dong,'2021-04-25') = 0 ;
+
+select * from v_nhan_vien;
+-- 22.	Thông qua khung nhìn v_nhan_vien thực hiện cập nhật địa chỉ thành “Liên Chiểu” đối với tất cả các nhân viên được nhìn thấy bởi khung nhìn này.
+
+update v_nhan_vien 
+set v_nhan_vien.dia_chi = 'Liên Chiểu';
+
+-- 23.	Tạo Stored Procedure sp_xoa_khach_hang dùng để xóa thông tin của một khách hàng nào đó với ma_khach_hang được truyền vào như là 1 tham số của sp_xoa_khach_hang.
+
+delimiter //
+create procedure sp_xoa_khach_hang()
+begin
+   select * from khach_hang
+end;
+delimiter ;
+call sp_xoa_khach_hang();
+
+
+
+
+
+
+
+--                                                                   ….. (¯`v´¯)♥
+--                                                                   …….•.¸.•´
+--                                                                   ….¸.•´
+--                                                                   … (
+--                                                                   ☻/
+--                                                                  /▌♥♥
+--                                                                  / \ ♥
