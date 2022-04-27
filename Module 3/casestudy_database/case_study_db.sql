@@ -222,8 +222,8 @@ SELECT * FROM hop_dong_chi_tiet;
 -- 1.
 -- 2.	Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 kí tự
 select * from nhan_vien
-where (SUBSTR( nhan_vien.ho_ten, 1,  1 ) ='H' or SUBSTR( nhan_vien.ho_ten, 1,  1 ) ='T' or SUBSTR( nhan_vien.ho_ten, 1,  1 ) ='K') 
-and length(nhan_vien.ho_ten)>15;
+where  char_length(nhan_vien.ho_ten) <=15 and (SUBSTR( nhan_vien.ho_ten, 1,  1 ) = 'H' or SUBSTR( nhan_vien.ho_ten, 1,  1 ) = 'K' or SUBSTR( nhan_vien.ho_ten, 1,  1 ) = 'T') 
+;
 
 -- 3. Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 
@@ -246,7 +246,7 @@ order by so_lan_dat_phong asc;
 --    cho tất cả các khách hàng đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng cũng 
 --    phải hiển thị ra).
 
-select kh.ma_khach_hang,kh.ho_ten,lk.ten_loai_khach,hd.ma_hop_dong,dv.ten_dich_vu,hd.ngay_lam_hop_dong,hd.ngay_ket_thuc,sum(dv.chi_phi_thue+(hdct.so_luong*dvdk.gia))
+select kh.ma_khach_hang,kh.ho_ten,lk.ten_loai_khach,hd.ma_hop_dong,dv.ten_dich_vu,hd.ngay_lam_hop_dong,hd.ngay_ket_thuc, sum((dv.chi_phi_thue + ifnull((hdct.so_luong * dvdk.gia), 0))) 
 as tong_tien
 from khach_hang kh
 left join loai_khach lk on lk.ma_loai_khach=kh.ma_loai_khach
@@ -254,16 +254,25 @@ left join hop_dong hd on hd.ma_khach_hang=kh.ma_khach_hang
 left join dich_vu dv on dv.ma_dich_vu=hd.ma_dich_vu
 left join hop_dong_chi_tiet hdct on hdct.ma_hop_dong=hd.ma_hop_dong
 left join dich_vu_di_kem dvdk on dvdk.ma_dich_vu_di_kem = hdct.ma_dich_vu_di_kem
-group by hd.ma_khach_hang;
+group by hd.ma_hop_dong;
+
 
  -- 6. Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu của tất cả các loại 
  --    dịch vụ chưa từng được khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).
  
+-- Cách 1 
+
 select dv.ma_dich_vu,dv.ten_dich_vu,dv.dien_tich,dv.chi_phi_thue,ldv.ten_loai_dich_vu from dich_vu dv
 left join loai_dich_vu ldv  on ldv.ma_loai_dich_vu = dv.ma_loai_dich_vu
--- join hop_dong on hop_dong.ma_dich_vu = dv.ma_dich_vu (dùng khi muốn lấy chi tiết tất cả hợp đồng có mã dịch vụ chưa từng được khách hàng thực hiện )
 where dv.ma_dich_vu not in( select hop_dong.ma_dich_vu from hop_dong 
 where (( month(hop_dong.ngay_lam_hop_dong) between 1 and 3  ) and  year(hop_dong.ngay_lam_hop_dong) = 2021 )
+);
+
+-- Cách 2
+select dv.ma_dich_vu,dv.ten_dich_vu,dv.dien_tich,dv.chi_phi_thue,ldv.ten_loai_dich_vu from dich_vu dv
+left join loai_dich_vu ldv  on ldv.ma_loai_dich_vu = dv.ma_loai_dich_vu
+where not exists( select hop_dong.ma_dich_vu from hop_dong 
+where (( month(hop_dong.ngay_lam_hop_dong) between 1 and 3  )and  year(hop_dong.ngay_lam_hop_dong) = 2021  and dv.ma_dich_vu=hop_dong.ma_dich_vu )
 );
 
 -- 7. Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của 
@@ -382,23 +391,20 @@ where khach_hang.ma_loai_khach  = 2 and (dich_vu.chi_phi_thue + (hop_dong_chi_ti
 -- vì vậy khuyến khích bạn sử dụng CONSTRAINT để tạo khóa ngoại.
 
 alter table hop_dong drop constraint fk_ma_khach_hang;
-alter table hop_dong drop constraint fk_ma_nhan_vien;
-alter table hop_dong drop constraint fk_ma_dich_vu;
-alter table hop_dong_chi_tiet drop constraint fk_ma_dich_vu;
+alter table hop_dong_chi_tiet drop constraint fk_ma_hop_dong;
 alter table hop_dong
 add constraint fk_ma_khach_hang
 foreign key (ma_khach_hang) references khach_hang(ma_khach_hang) on delete cascade;
 alter table hop_dong
 add constraint fk_ma_nhan_vien
 foreign key (ma_nhan_vien) references nhan_vien(ma_nhan_vien) on delete cascade;
-alter table hop_dong
-add constraint fk_ma_dich_vu
-foreign key (ma_dich_vu) references dich_vu(ma_dich_vu) on delete cascade;
+
+alter table hop_dong_chi_tiet
+add constraint fk_ma_hop_dong
+foreign key (ma_hop_dong) references hop_dong(ma_hop_dong) on delete cascade;
 -- Chỉ định dữ liệu con sẽ bị xóa khi dữ liệu mẹ bị xóa.
 
 
-delete from hop_dong
-where year(hop_dong.ngay_lam_hop_dong) < 2021;
 delete from khach_hang
 where khach_hang.ma_khach_hang in (select hop_dong.ma_khach_hang from hop_dong where year(hop_dong.ngay_lam_hop_dong) < 2021);
 
