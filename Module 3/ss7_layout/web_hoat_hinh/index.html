@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoạt Hình</title>
+    <style>
+        *{
+            /*content-box: width và height chỉ là của content*/
+            /*border-box: width là bao gồm của padding, content và border*/
+            box-sizing: border-box;
+        }
+        .header{
+            margin: 5px;
+            padding: 10px;
+            background-color: lightgrey;
+        }
+        .title {
+            color: #000;
+            font-size: 50px;
+            font-family: "Bell MT";
+            font-style: italic;
+        }
+        .title samp1{
+            background-color: red;
+            color: white;
+            font-size: 50px;
+        }
+
+        .menu{
+            font-weight: bolder;
+            font-size: 20px;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+            background-color: lightgrey;
+        }
+
+        .col-1 {width: 8.33%}
+        .col-2 {width: 16.66%}
+        .col-3 {width: 25%}
+        .col-4 {width: 33.3%}
+        .col-5 {width: 41.66%}
+        .col-6 {width: 50%}
+        .col-7 {width: 58.33%}
+        .col-8 {
+            width: 66.66%;}
+        .col-9 {
+            width: 75%;}
+        .col-10 {
+            width: 83.33%;}
+        .col-11 {
+            width: 91.66%;
+        }
+        .col-12 {
+            width: 100%;
+        }
+        .row {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 5px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            [class*="col-"] {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+            .title {
+                background-color: black;
+            }
+        }
+        .col-3{
+            margin: 5px;
+            padding: 10px;
+            background-color: lightgrey;
+        }
+        .col-3 h4{
+            font-size: 20px;
+            background-color: white;
+            margin: 0px;
+            padding: 5px;
+        }
+        .col-3 p{
+            font-size: 20px;
+            background-color: white;
+            margin: 0px;
+            padding: 5px;
+        }
+
+        .col-8{
+            margin: 5px;
+            padding: 10px;
+            overflow: hidden;
+        }
+        .col-8 h4{
+            font-size: 20px;
+            margin: 5px;
+            padding: 5px;
+        }
+        .col-8 p{
+            font-size: 20px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .footer{
+            font-size: 20px;
+            font-weight: bolder;
+            text-align: center;
+            background-color: lightgrey;
+            color: black;
+            clear:both;
+            margin: 5px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div class="header">
+        <span class="title">Phim <samp1>Hoạt Hình</samp1></span>
+    </div>
+    <div>
+        <div class="menu">
+            Phim hoạt hình | Phim hoạt hình yêu thích | Nhân vật hoạt hình | Góp ý
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div>
+                <div>
+                    <video width="100%" controls>
+                        <source src="http://webcoban.vn/file/bunny.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Not view video
+                    </video>
+                    <h4>Title Video</h4>
+                    <p>Chanel fun</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <video width="100%" controls>
+                        <source src="http://webcoban.vn/file/bunny.mp4"  type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Not view video
+                    </video>
+                    <h4>Title Video</h4>
+                    <p>Chanel fun</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <video width="100%" controls>
+                        <source src="http://webcoban.vn/file/bunny.mp4"  type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Not view video
+                    </video>
+                    <h4>Title Video</h4>
+                    <p>Chanel fun</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <video width="100%" controls>
+                        <source src="http://webcoban.vn/file/bunny.mp4"  type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Not view video
+                    </video>
+                    <h4>Title Video</h4>
+                    <p>Chanel fun</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <video width="100%" controls>
+                    <source src="http://webcoban.vn/file/bunny.mp4"  type="video/mp4">
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Not view video
+                </video>
+                <h4>Title Video</h4>
+                <p>Chanel fun</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="footer">
+            <p>&copy; 2017 - Thiết kế web bởi trang hoathinhvm.net</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

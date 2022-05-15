@@ -1,0 +1,168 @@
+/*--------------*/
+/*----element---*/
+/*--------------*/
+body {
+    margin: 0;
+    font-family: 'Google Sans', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f1f4f5;
+    font-weight: 400;
+    text-align: left;
+    line-height: 28px;
+}
+
+h4 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #222c37;
+}
+
+html {
+    margin: 0;
+}
+
+/*--------------*/
+/*----header---*/
+/*--------------*/
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to right bottom, deepskyblue 30%, blue 50%);
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    clear: none;
+}
+
+#logo {
+    position: absolute;
+    font-family: "Segoe Script", monospace;
+    font-size: 42px;
+    font-weight: bolder;
+    margin-top: 32px;
+    margin-left: 20px;
+    display: inline;
+}
+
+#menu {
+    position: absolute;
+    display: inline;
+    padding-top: 30px;
+}
+
+#menu ul li {
+    list-style-type: none;
+    display: inline;
+    margin-left: 50px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: skyblue;
+    font-weight: bolder;
+    font-family: "Segoe Script", fantasy;
+    font-size: 20px;
+}
+
+#menu ul {
+    margin-top: 40px;
+    padding-top: 35px;
+    padding-left: 325px;
+    display: inline;
+}
+
+#login {
+    font-size: 20px;
+    color: aquamarine;
+    font-family: "Adobe Arabic", cursive;
+    display: inline;
+    margin-left: 260px;
+}
+
+/*--------------*/
+/*----content---*/
+/*--------------*/
+.content {
+    width: 100%;
+    position: relative;
+    height: auto;
+    margin-top: 101px;
+}
+
+.catalog {
+    position: fixed;
+    width: 25%;
+    display: inline-block;
+    /*clear: none;*/
+}
+
+.main-content {
+    /*position: relative;*/
+    background-color: white;
+    width: 50%;
+    padding: 40px;
+    display: inline-block;
+    margin-left: 25%;
+    /*clear: none;*/
+}
+
+.commercial {
+    /*position: relative;*/
+    width: 25%;
+    display: inline-block;
+    /*margin-left: 75%;*/
+    /*clear: none;*/
+}
+
+.catalog ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.catalog ul {
+    background: lightblue;
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+    clear: none;
+    margin-top: 0;
+}
+
+.catalog ul li {
+    width: auto;
+    height: 49px;
+    line-height: 40px;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 1em;
+    position: relative;
+}
+
+.catalog ul li:hover {
+    background-color: deepskyblue;
+}
+
+.catalog .sub-catalog {
+    position: absolute;
+    left: 250px;
+    top: 0;
+    display: none;
+}
+
+.catalog li:hover .sub-catalog {
+    display: block;
+}
+
+/*--------------*/
+/*----footer---*/
+/*--------------*/
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to right bottom, blue 20%, deepskyblue 100%);
+    position: relative;
+}

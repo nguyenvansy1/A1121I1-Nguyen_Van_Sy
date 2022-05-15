@@ -1,0 +1,19 @@
+h1{
+    line-height: 0.2cm;
+}
+label{
+    font-family: "Times New Roman";
+    font-size: 18px;
+}
+p {
+    font-family: "Times New Roman";
+    font-size: 20px;
+    text-align: justify;
+    text-indent: 60px;
+}
+p span {
+    color: #0033CC;
+}
+p span1 {
+    color: #1eb2ff;
+}

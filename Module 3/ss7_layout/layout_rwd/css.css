@@ -1,0 +1,40 @@
+body{
+    font-family: Arial;
+}
+#header{
+    margin: 10px;
+    padding: 10px;
+    background-color: black;
+}
+#menu{
+    height: 30px;
+    padding:10px;
+    margin: 10px;
+}
+#menu li{
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+#menu li a {
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+}
+
+.footer{
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    background-color: black;
+    color: white;
+    clear:both;
+    margin: 10px;
+    padding: 10px;
+}
