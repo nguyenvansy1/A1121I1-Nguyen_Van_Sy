@@ -21,6 +21,8 @@ create table role(
 );
 
 
+INSERT INTO customer(customer_id, customer_name, customer_birthday, customer_gender, customer_id_card, customer_phone, customer_email, 
+customer_address,customer_type_id) VALUES('2', 'Nguyen Van Sy', '2021-12-12', b'0', '123123123', '+84-373216810', 'sypro123@gmail.com', 'Da Nang', '1');
 create table employee(
 	employee_id int primary key auto_increment,
     employee_name varchar(45) not null,
@@ -33,7 +35,7 @@ create table employee(
     position_id int not null,
     education_degree_id int not null,
     division_id int not null,
-	user_id int,
+	user_id  int,
     foreign key(division_id) references division(division_id),
     foreign key(education_degree_id) references education_degree(education_degree_id),
     foreign key(position_id) references `position`(position_id),
@@ -133,15 +135,15 @@ DELIMITER $$
 CREATE TRIGGER create_employee_account
 AFTER INSERT ON employee FOR EACH ROW
 BEGIN
-CALL create_employee(new.employee_email, "123",2);
+CALL create_employee(new.employee_email, "123",1);
 END $$
 DELIMITER ;
 
 -- Tạo procedure
 DELIMITER $$
-CREATE PROCEDURE create_employee(in username1 varchar(50), in pass1 varchar(50), in role_id1 int)
+CREATE PROCEDURE create_employee(in username1 int, in pass1 varchar(50), in role_id1 int)
 BEGIN
-	INSERT INTO account1(username, pass , role_id) VALUES(username1, pass1 , role_id1);
+	INSERT INTO account1(username,pass,role_id) VALUES(username1,pass1,role_id1);
 END $$
 DELIMITER ;
 
