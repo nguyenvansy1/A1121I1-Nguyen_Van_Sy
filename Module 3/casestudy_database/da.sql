@@ -113,11 +113,13 @@ create table contract_detail(
 	contract_detail_id int primary key auto_increment,
     quantity int not null,
     contract_id int not null,
-    attach_service_id int not null,
+    attach_service_id int ,
     foreign key(contract_id) references contract(contract_id),
     foreign key(attach_service_id) references attach_service(attach_service_id)
 );
 
+	
+DROP TABLE contract_detail;
 create table account1(
    user_id int primary key auto_increment,
    username varchar(50),
