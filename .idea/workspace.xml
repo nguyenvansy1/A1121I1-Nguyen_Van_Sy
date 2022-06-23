@@ -1,7 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5b07432-d0b1-49c8-82a7-ffacd396e23f" name="Default Changelist" comment="" />
+    <list default="true" id="c5b07432-d0b1-49c8-82a7-ffacd396e23f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Module 2/src/Test/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 2/src/Test/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss1_tong_quan_mvc/dictionary/src/main/java/com/vn/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss1_tong_quan_mvc/dictionary/src/main/java/com/vn/config/AppInitiallizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss1_tong_quan_mvc/dictionary/src/main/java/com/vn/controller/Dictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss1_tong_quan_mvc/dictionary/src/main/webapp/WEB-INF/view/dictionary.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/caculator/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/caculator/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/caculator/src/main/java/com/vn/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/caculator/src/main/java/com/vn/config/AppInitiallizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/caculator/src/main/java/com/vn/controller/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/caculator/src/main/webapp/WEB-INF/views/calculator.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/sandwich/src/main/java/com/vn/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/sandwich/src/main/java/com/vn/config/AppInitiallizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/sandwich/src/main/java/com/vn/controller/Sandwich.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss2_spring_controller/sandwich/src/main/webapp/WEB-INF/view/sandwich.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss4_Data_binding/email/src/main/java/com/vn/Service/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss4_Data_binding/email/src/main/java/com/vn/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss4_Data_binding/email/src/main/java/com/vn/config/AppInitiallizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Module 4/ss4_Data_binding/email/src/main/java/com/vn/controller/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 1/module3_Test/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module 1/module3_Test/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 1/module3_Test/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Module 1/module3_Test/test1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Models/Villa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/Services/EmployeeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/CaseStudy/controllers/FuramaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/FinalExamModule2/data/medical_record.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/FinalExamModule2/data/medical_record.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/FinalExamModule2/models/BenhAnThuong.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/FinalExamModule2/models/BenhAnThuong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/FinalExamModule2/models/BenhAnVIP.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/FinalExamModule2/models/BenhAnVIP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/Test/One.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/Test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/Test/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/Test/Two.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss12_JavaCollectionFramework/thuchanh/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss12_JavaCollectionFramework/thuchanh/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss14_Sort/baitap/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss14_Sort/baitap/InsertionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss14_Sort/baitap/InsertionSort1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss14_Sort/baitap/InsertionSort1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss14_Sort/thuchanh/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss14_Sort/thuchanh/InsertionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss14_Sort/thuchanh/SelectionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss14_Sort/thuchanh/SelectionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss16_file/baitap/CSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss16_file/baitap/CSV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss17_IO/baitap/FileBinaryUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss17_IO/baitap/FileBinaryUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss17_IO/thuchanh/CopyFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss17_IO/thuchanh/CopyFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss19_String_Regex/baitap/ValidatePhone.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss19_String_Regex/baitap/ValidatePhone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss1_IntroductiontoJava/thuchanh/TinhSoNgayTrongThang.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss1_IntroductiontoJava/thuchanh/TinhSoNgayTrongThang.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss3_MangVaPhuongThuc/thuchanh/ChuyenDoiNhietDo.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss3_MangVaPhuongThuc/thuchanh/ChuyenDoiNhietDo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss6_KeThua/thuchanh/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss6_KeThua/thuchanh/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss6_KeThua/thuchanh/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss6_KeThua/thuchanh/Rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss6_KeThua/thuchanh/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss6_KeThua/thuchanh/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss8_Clean_Code_Refactoring/baitap/TennisGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/out/production/Module 2/ss8_Clean_Code_Refactoring/baitap/TennisGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/src/CaseStudy/controllers/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/src/CaseStudy/controllers/FuramaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/src/Test/One.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/src/Test/One.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/src/Test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/src/Test/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/src/Test/Two.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/src/Test/Two.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/src/ss19_String_Regex/baitap/ValidatePhone.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/src/ss19_String_Regex/baitap/ValidatePhone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 2/src/ss3_MangVaPhuongThuc/baitap/ThemPhanTuVaoMang.java" beforeDir="false" afterPath="$PROJECT_DIR$/Module 2/src/ss3_MangVaPhuongThuc/baitap/ThemPhanTuVaoMang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Module 3/casestudy_database/da.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Module 3/casestudy_database/da.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +70,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="27NQ3f2ibyqdR3Uwqr1BFge6fw5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,7 +79,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Module 2" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/A1121I1_Module4" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SvnConfiguration">
@@ -33,6 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1649157866078</updated>
       <workItem from="1649157869489" duration="54000" />
+      <workItem from="1655905403390" duration="17000" />
     </task>
     <servers />
   </component>
@@ -40,10 +102,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1649157922880">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1655905419370">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1649157922880" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1655905419370" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1649157916156">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -42,6 +42,13 @@ create table employee(
     foreign key(user_id) references account1(user_id)
 );
 
+insert into employee(employee_name,employee_birthday,employee_id_card,employee_salary,employee_phone,employee_email,employee_address,
+position_id,education_degree_id,division_id) values ('Nguyen Van Sy','2001-12-12','123123123','1245','+84-373216810','ss2s2@gmail.com','Da Nang','3','2','1');
+
+
+INSERT INTO employee(`employee_id`, `employee_name`, `employee_birthday`, `employee_id_card`, `employee_salary`, `employee_phone`, `employee_email`,
+ `employee_address`, `position_id`, `education_degree_id`, `division_id`) VALUES ('87', 'Nguyen Van Sy', '2001-12-12', '112312312', '2000', '+84-373216810', 
+ 'synguy12w31en@gmail.com', 'Da Nang', '2', '3', '3');
 create table customer_type(
 	customer_type_id int primary key auto_increment,
     customer_type_name varchar(45)
@@ -120,6 +127,7 @@ create table contract_detail(
 
 	
 DROP TABLE contract_detail;
+
 create table account1(
    user_id int primary key auto_increment,
    username varchar(50),
@@ -128,26 +136,59 @@ create table account1(
    foreign key(role_id) references role(role_id)
 );
 
+INSERT INTO employee  values('');
 INSERT INTO customer_type(customer_type.customer_type_id, customer_type.customer_type_name) values(1, "Silver");
 INSERT INTO customer_type(customer_type.customer_type_id, customer_type.customer_type_name) values(2, "Gold");
 INSERT INTO customer_type(customer_type.customer_type_id, customer_type.customer_type_name) values(3, "Diamond");
 
--- Tạo trigger khi chúng ta thêm mới nhân viên thì nhân viên đó sẽ nhận được một tài khoản
-DELIMITER $$
-CREATE TRIGGER create_employee_account
-AFTER INSERT ON employee FOR EACH ROW
-BEGIN
-CALL create_employee(new.employee_email, "123",1);
-END $$
-DELIMITER ;
+-- Tạo trigger khi them nhan viên thi nhan vien đó sẽ nhận một tài khoản
+-- DELIMITER $$
+-- CREATE TRIGGER create_employee_account
+-- AFTER INSERT ON employee FOR EACH ROW
+-- BEGIN
+-- CALL create_employee(new.employee_email, "123",1);
+-- END $$
+-- DELIMITER ;
+
+-- DELIMITER $$
+-- CREATE PROCEDURE create_employee(in username1 int, in pass1 varchar(50), in role_id1 int)
+-- BEGIN
+-- 	INSERT INTO account1(username,pass,role_id) VALUES(username1,pass1,role_id1);
+-- END $$
+-- DELIMITER ;
+
+delimiter //
+create trigger save_account_employee
+before insert
+on employee for each row
+begin
+	insert into account1(username,pass,role_id)
+    values (new.employee_email, "123",1);
+    
+    if employee.employee_user_id is null then
+		set new.user_id = account1.user_id;
+    end if;
+end;
+// delimiter ;
+
+-- DELIMITER $$
+-- CREATE TRIGGER create_employee_user_id
+-- AFTER INSERT ON account1 FOR EACH ROW
+-- BEGIN
+-- CALL create_user_id(new.user_id);
+-- END $$
+-- DELIMITER ;
 
 -- Tạo procedure
-DELIMITER $$
-CREATE PROCEDURE create_employee(in username1 int, in pass1 varchar(50), in role_id1 int)
-BEGIN
-	INSERT INTO account1(username,pass,role_id) VALUES(username1,pass1,role_id1);
-END $$
-DELIMITER ;
+
+
+-- DELIMITER $$
+-- CREATE PROCEDURE create_user_id(in user_id_1 int)
+-- BEGIN
+-- 	INSERT INTO employee(user_id) VALUES(user_id_1);
+-- END $$
+-- DELIMITER ;
+
 
 -- Thêm dữ liệu cho position
 INSERT INTO `position`(position_id, position_name) VALUES (1, "Manager");
@@ -182,3 +223,4 @@ INSERT INTO attach_service VALUE (2, "Massage", 700000, 2, "Yes");
 INSERT INTO attach_service VALUE (3, "Food", 500000, 1, "Yes");
 INSERT INTO attach_service VALUE (4, "Baverage", 300000, 1, "Yes");
 
+drop trigger save_account_employee
