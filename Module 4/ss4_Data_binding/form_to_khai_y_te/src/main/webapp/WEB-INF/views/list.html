@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <title>Medical Declaration Management</title>
+</head>
+<body>
+<h1>Medical declaration list</h1>
+<p>
+    <a href="/medical/create">Create new Medical Declaration</a>
+</p>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Year of birth</th>
+        <th>Gender</th>
+        <th>Nationality</th>
+        <th>CMND</th>
+        <th>Vehicle</th>
+        <th>Departure Day</th>
+        <th>End Day</th>
+        <th>View</th>
+        <th>Edit</th>
+    </tr>
+    <th:block th:each="medicalDeclaration : ${medicalDeclarations}">
+        <tr>
+            <td th:text="${medicalDeclaration.name}"></td>
+            <td th:text="${medicalDeclaration.yearOfBirth}"></td>
+            <td th:text="${medicalDeclaration.gender}"></td>
+            <td th:text="${medicalDeclaration.nationality}"></td>
+            <td th:text="${medicalDeclaration.CMND}"></td>
+            <td th:text="${medicalDeclaration.vehicle}"></td>
+            <td th:text="${medicalDeclaration.departureDay}"></td>
+            <td th:text="${medicalDeclaration.endDate}"></td>
+            <td><a th:href="@{/medical/{id}/view(id=${medicalDeclaration.getId()})}">View</a></td>
+            <td><a th:href="@{/medical/{id}/edit(id=${medicalDeclaration.getId()})}">Edit</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

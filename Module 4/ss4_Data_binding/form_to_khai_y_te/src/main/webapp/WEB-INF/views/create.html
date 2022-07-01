@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h3>Create medical declaration</h3>
+<p>
+    <a th:href="@{/medical-declaration}">
+        Back to medical declaration list
+    </a>
+</p>
+<label style="color: red" th:text="${msg}"></label>
+<div>
+    <form th:action="@{/medical/create}" method="post" th:object="${medicalDeclaration}" novalidate="novalidate">
+        <input type="text" th:field="${medicalDeclaration.id}" hidden>
+        <div>
+            <label>Name: </label>
+            <input th:field="${medicalDeclaration.name}" th:required="required">
+        </div>
+        <div>
+            <label>Year of birth: </label>
+            <input th:field="${medicalDeclaration.yearOfBirth}" th:required="required">
+        </div>
+        <div>
+            <label>Gender: </label>
+            <select th:field="${medicalDeclaration.gender}">
+                <option th:value="Nam" th:text="Nam"></option>
+                <option th:value="Nu" th:text="Nu"></option>
+            </select>
+        </div>
+        <div>
+            <label>Nationality: </label>
+            <input th:field="${medicalDeclaration.nationality}" th:required="required">
+        </div>
+        <div>
+            <label>Passport number or CMND card or other legal travel document: </label>
+            <input th:field="${medicalDeclaration.CMND}" th:required="required">
+        </div>
+        <div>
+            <label>Vehicle: </label>
+            <input th:field="${medicalDeclaration.vehicle}" th:required="required">
+        </div>
+        <div>
+            <label>Vehicle number: </label>
+            <input th:field="${medicalDeclaration.vehicleNumber}" th:required="required">
+        </div>
+        <div>
+            <label>Number of seats: </label>
+            <input th:field="${medicalDeclaration.numberOfSeats}" th:required="required">
+        </div>
+        <div>
+            <label>Departure day: </label>
+            <input th:field="${medicalDeclaration.departureDay}" th:required="required">
+        </div>
+        <div>
+            <label>End Day: </label>
+            <input th:field="${medicalDeclaration.endDate}" th:required="required">
+        </div>
+        <div>
+            <label>In the past 14 days, which cities have you visited? </label>
+            <input th:field="${medicalDeclaration.beenInCities}" th:required="required">
+        </div>
+        <br>
+        <div>
+            <label style="font-weight: bold">Contact address</label>
+        </div>
+        <div>
+            <label>In the past 14 days, which cities have you visited? </label>
+            <input th:field="${medicalDeclaration.beenInCities}" th:required="required">
+        </div>
+        <div>
+            <label>City / province:</label>
+            <input th:field="${medicalDeclaration.city}" th:required="required">
+        </div>
+        <div>
+            <label>District:</label>
+            <input th:field="${medicalDeclaration.district}" th:required="required">
+        </div>
+        <div>
+            <label>Ward / commune:</label>
+            <input th:field="${medicalDeclaration.commune}" th:required="required">
+        </div>
+        <div>
+            <label>Address:</label>
+            <input th:field="${medicalDeclaration.address}" th:required="required">
+        </div>
+        <div>
+            <label>Phone number:</label>
+            <input th:field="${medicalDeclaration.phoneNumber}" th:required="required">
+        </div>
+        <div>
+            <label>Email:</label>
+            <input th:field="${medicalDeclaration.email}" th:required="required">
+        </div>
+        <br>
+        <div>
+            <label style="font-weight: bold">During the past 14 days, have you experienced any of the following symptoms?</label>
+        </div>
+        <table>
+            <tr>
+                <th>Symptom</th>
+                <th>Yes</th>
+                <th>No</th>
+            </tr>
+            <tr>
+                <td>Fever</td>
+                <td>
+                    <input type="radio" name="radio1" th:value="true" th:field="${medicalDeclaration.fever}" th:checked="${medicalDeclaration.fever}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio1" th:value="false" th:field="${medicalDeclaration.fever}" th:checked="${!medicalDeclaration.fever}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Cough</td>
+                <td>
+                    <input type="radio" name="radio2" th:value="true" th:field="${medicalDeclaration.cough}" th:checked="${medicalDeclaration.cough}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio2" th:value="false" th:field="${medicalDeclaration.cough}" th:checked="${!medicalDeclaration.cough}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Difficulty breathing</td>
+                <td>
+                    <input type="radio" name="radio3" th:value="true" th:field="${medicalDeclaration.difficultyBreathing}" th:checked="${medicalDeclaration.difficultyBreathing}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio3" th:value="false" th:field="${medicalDeclaration.difficultyBreathing}" th:checked="${!medicalDeclaration.difficultyBreathing}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Sore throat</td>
+                <td>
+                    <input type="radio" name="radio4" th:value="true" th:field="${medicalDeclaration.soreThroat}" th:checked="${medicalDeclaration.soreThroat}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio4" th:value="false" th:field="${medicalDeclaration.soreThroat}" th:checked="${!medicalDeclaration.soreThroat}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Vomiting</td>
+                <td>
+                    <input type="radio" name="radio5" th:value="true" th:field="${medicalDeclaration.vomiting}" th:checked="${medicalDeclaration.vomiting}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio5" th:value="false" th:field="${medicalDeclaration.vomiting}" th:checked="${!medicalDeclaration.vomiting}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Diarrhea</td>
+                <td>
+                    <input type="radio" name="radio6" th:value="true" th:field="${medicalDeclaration.diarrhea}" th:checked="${medicalDeclaration.diarrhea}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio6" th:value="false" th:field="${medicalDeclaration.diarrhea}" th:checked="${!medicalDeclaration.diarrhea}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Hemorrhage</td>
+                <td>
+                    <input type="radio" name="radio7" th:value="true" th:field="${medicalDeclaration.hemorrhage}" th:checked="${medicalDeclaration.hemorrhage}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio7" th:value="false" th:field="${medicalDeclaration.hemorrhage}" th:checked="${!medicalDeclaration.hemorrhage}">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Rash</td>
+                <td>
+                    <input type="radio" name="radio8" th:value="true" th:field="${medicalDeclaration.rash}" th:checked="${medicalDeclaration.rash}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio8" th:value="false" th:field="${medicalDeclaration.rash}" th:checked="${!medicalDeclaration.rash}">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div style="font-weight: bold">Exposure history: During the last 14 days have you had:</div>
+        <table>
+            <tr>
+                <th></th>
+                <th>Yes</th>
+                <th>No</th>
+            </tr>
+            <tr>
+                <td>Contact with animals:</td>
+                <td>
+                    <input type="radio" name="radio9" th:value="true" th:field="${medicalDeclaration.contactWithAnimals}" th:checked="${medicalDeclaration.contactWithAnimals}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio9" th:value="false" th:field="${medicalDeclaration.contactWithAnimals}" th:checked="${!medicalDeclaration.contactWithAnimals}">
+                </td>
+            </tr>
+            <tr>
+                <td>Contact with sick people:</td>
+                <td>
+                    <input type="radio" name="radio10" th:value="true" th:field="${medicalDeclaration.contactWithSickPeople}" th:checked="${medicalDeclaration.contactWithSickPeople}">
+                </td>
+
+                <td>
+                    <input type="radio" name="radio10" th:value="false" th:field="${medicalDeclaration.contactWithSickPeople}" th:checked="${!medicalDeclaration.contactWithSickPeople}">
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Create</button>
+    </form>
+</div>
+</body>
+</html>

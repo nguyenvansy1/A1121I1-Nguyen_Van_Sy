@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h3>View medical declaration</h3>
+<p>
+  <a th:href="@{/medical-declaration}">
+    Back to medical declaration list
+  </a>
+</p>
+<div>
+  <div>
+    <label>Name: </label>
+    <label th:text="${medicalDeclaration.name}"></label>
+  </div>
+  <div>
+    <label>Year of birth: </label>
+    <label th:text="${medicalDeclaration.yearOfBirth}"></label>
+  </div>
+  <div>
+    <label>Gender: </label>
+    <label th:text="${medicalDeclaration.gender}"></label>
+  </div>
+  <div>
+    <label>Nationality: </label>
+    <label th:text="${medicalDeclaration.nationality}"></label>
+  </div>
+  <div>
+    <label>Passport number or CMND card or other legal travel document: </label>
+    <label th:text="${medicalDeclaration.CMND}"></label>
+  </div>
+  <div>
+    <label>Vehicle: </label>
+    <label th:text="${medicalDeclaration.vehicle}"></label>
+  </div>
+  <div>
+    <label>Vehicle number: </label>
+    <label th:text="${medicalDeclaration.vehicleNumber}"></label>
+  </div>
+  <div>
+    <label>Number of seats: </label>
+    <label th:text="${medicalDeclaration.numberOfSeats}"></label>
+  </div>
+  <div>
+    <label>Departure day: </label>
+    <label th:text="${medicalDeclaration.departureDay}"></label>
+  </div>
+  <div>
+    <label>End Day: </label>
+    <label th:text="${medicalDeclaration.endDate}"></label>
+  </div>
+  <div>
+    <label>In the past 14 days, which cities have you visited? </label>
+    <label th:text="${medicalDeclaration.beenInCities}"></label>
+  </div>
+  <br>
+  <div>
+    <label style="font-weight: bold">Contact address</label>
+  </div>
+  <div>
+    <label>In the past 14 days, which cities have you visited? </label>
+    <label th:text="${medicalDeclaration.beenInCities}"></label>
+  </div>
+  <div>
+    <label>City / province:</label>
+    <label th:text="${medicalDeclaration.city}"></label>
+  </div>
+  <div>
+    <label>District:</label>
+    <label th:text="${medicalDeclaration.district}"></label>
+  </div>
+  <div>
+    <label>Ward / commune:</label>
+    <label th:text="${medicalDeclaration.commune}"></label>
+  </div>
+  <div>
+    <label>Address:</label>
+    <label th:text="${medicalDeclaration.address}"></label>
+  </div>
+  <div>
+    <label>Phone number:</label>
+    <label th:text="${medicalDeclaration.phoneNumber}"></label>
+  </div>
+  <div>
+    <label>Email:</label>
+    <label th:text="${medicalDeclaration.email}"></label>
+  </div>
+  <br>
+  <div>
+    <label style="font-weight: bold">During the past 14 days, have you experienced any of the following symptoms?</label>
+  </div>
+  <table>
+    <tr>
+      <th>Symptom</th>
+      <th>Yes</th>
+      <th>No</th>
+    </tr>
+    <tr>
+      <td>Fever</td>
+      <td>
+        <div th:if="${medicalDeclaration.fever}">
+              <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.fever}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Cough</td>
+      <td>
+        <div th:if="${medicalDeclaration.cough}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.cough}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Difficulty breathing</td>
+      <td>
+        <div th:if="${medicalDeclaration.difficultyBreathing}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.difficultyBreathing}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Sore throat</td>
+      <td>
+        <div th:if="${medicalDeclaration.soreThroat}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.soreThroat}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Vomiting</td>
+      <td>
+        <div th:if="${medicalDeclaration.vomiting}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.vomiting}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Diarrhea</td>
+      <td>
+        <div th:if="${medicalDeclaration.diarrhea}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.diarrhea}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Hemorrhage</td>
+      <td>
+        <div th:if="${medicalDeclaration.hemorrhage}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.hemorrhage}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Rash</td>
+      <td>
+        <div th:if="${medicalDeclaration.rash}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.rash}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <div style="font-weight: bold">Exposure history: During the last 14 days have you had:</div>
+  <table>
+    <tr>
+      <th></th>
+      <th>Yes</th>
+      <th>No</th>
+    </tr>
+    <tr>
+      <td>Contact with animals:</td>
+      <td>
+        <div th:if="${medicalDeclaration.contactWithAnimals}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.contactWithAnimals}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>Contact with sick people:</td>
+      <td>
+        <div th:if="${medicalDeclaration.contactWithSickPeople}">
+          <label>Yes</label>
+        </div>
+      </td>
+      <td>
+        <div th:unless="${medicalDeclaration.contactWithSickPeople}">
+          <label>No</label>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

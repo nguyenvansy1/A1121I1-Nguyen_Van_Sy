@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<form th:action="@{/email/edit}" method="post" th:object="${email}" novalidate="novalidate">
+    <input type="text" hidden th:field="*{id}">
+    <div>
+        <label>Language: </label>
+       <select  name="language">
+           <option th:each="language: ${language}" th:field="*{language}" th:text="${language}" th:value="${language}"></option>
+       </select>
+    </div>
+    <div>
+        <label>Page size: </label>
+        <select  name="page">
+            <option th:each="page: ${page}" th:field="*{page}" th:text="${page}" th:value="${page}"></option>
+        </select>
+    </div>
+    <div th:if="${email.filter}">
+        <label>Spam filter: </label>
+        <input type="checkbox" th:field="*{filter}" checked>
+    </div>
+    <div th:unless="${email.filter}">
+        <label>Spam filter: </label>
+        <input type="checkbox" th:field="*{filter}">
+    </div>
+    <div>
+        <label>Signature: </label>
+        <input type="text" th:field="*{signature}">
+    </div>
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>
