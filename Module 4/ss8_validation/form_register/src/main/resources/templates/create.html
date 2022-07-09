@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/create}" method="post" th:object="${user}">
+    <div>
+        <h1 style="font-family: sans-serif; text-align: center;">Create User</h1>
+    </div>
+    <input type="hidden" th:field="*{id}">
+    <div class="form-row" style="height: 100px">
+        <div class="form-group col-md-6">
+            <label>First Name</label>
+            <input type="text"  class="form-control"  placeholder="First Name" th:field="*{firstName}">
+            <p style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control"  placeholder="Last Name" th:field="*{lastName}">
+            <p style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+        </div>
+    </div>
+    <div class="form-row" style="height: 100px">
+        <div class="form-group col-md-4">
+            <label>Phone</label>
+            <input type="text"  class="form-control" placeholder="Phone"  th:field="*{phone}" >
+            <p style="color:red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Age</label>
+            <input type="number"  class="form-control"placeholder="Age" th:field="*{age}">
+            <p style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Email</label>
+            <input type="text"  class="form-control"placeholder="Email" th:field="*{email}">
+            <p style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+        </div>
+    </div>
+    <button type="submit" style="background-color: black; color: white;float: right;width:60px" class="btn">Create </button>
+</form>
+</body>
+</html>

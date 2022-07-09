@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List song</title>
+</head>
+<body>
+<h1>List song</h1>
+<form method="post" th:action="@{/song/search}">
+    <input type="text" name="song">
+    <input type="submit" value="search">
+</form>
+<table border="1">
+    <tr>
+        <th>Song</th>
+        <th>Singer</th>
+        <th>Genre</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="song: ${songs}" >
+        <td><a th:href="@{${song.getLink_file()}}" th:text="${song.song}"></a></td>
+        <td th:text="${song.singer}"></td>
+        <td th:text="${song.genre}"></td>
+        <td><a th:href="@{/song/{song}/update(song=${song.getSong()})}">Update</a></td>
+        <td><a th:href="@{/song/{song}/delete(song=${song.getSong()})}">Delete</a></td>
+    </tr>
+</table>
+<p>
+    <a th:href="@{/song/create}">Create Song</a>
+</p>
+</body>
+</html>
