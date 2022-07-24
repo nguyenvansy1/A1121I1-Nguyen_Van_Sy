@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:insert="~{/layout::head}"></div>
+
+<body>
+
+<div class="sidebar" >
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">Library</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <i class='bx bx-search' ></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a th:href="@{/book-page}">
+                <i class='bx bx-grid-alt'></i>
+                <span class="links_name">Book</span>
+            </a>
+            <span class="tooltip">Book</span>
+        </li>
+        <li>
+            <a th:href="@{/book-page/create}">
+                <i class='bx bx-heart' ></i>
+                <span class="links_name">Add Book</span>
+            </a>
+            <span class="tooltip">Add Book</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-folder' ></i>
+                <span class="links_name">Code</span>
+            </a>
+            <span class="tooltip">Code</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog' ></i>
+                <span class="links_name">Setting</span>
+            </a>
+            <span class="tooltip">Setting</span>
+        </li>
+        <li class="profile">
+            <div class="profile-details">
+                <!--<img src="profile.jpg" alt="profileImg">-->
+                <div class="name_job">
+                    <div class="name">Sy Nguyen</div>
+                    <div class="job">Borrow web</div>
+                </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out" ></i>
+        </li>
+    </ul>
+</div>
+
+<section class="home-section">
+    <div style="background-color: #E4E9F7; height: 50px"></div>
+    <form th:action="@{/book-page/search}" method="get">
+        <div  class="form-row" style="margin-left: 110px">
+            <div class="form-group col-md-4">
+                <label>Title</label>
+                <input  type="text"  class="form-control" th:value="${title}" name="title">
+            </div>
+            <div class="form-group col-md-3">
+                <label>Author</label>
+                <input  type="text"  class="form-control" th:value="${author}" name="author">
+            </div>
+            <div class="form-group col-md-3">
+                <label>Quantity</label>
+                <input  type="text"  class="form-control" th:value="${quantity}" name="quantity">
+            </div>
+            <div class="search-1 col-md-2">
+                <button style="margin-top:20px;border:1px solid black" class="btn my-2 my-sm-0 search-hover" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+    <div style="margin: 0px 100px 0px 100px " class="w3-container">
+        <table class="w3-table-all w3-hoverable">
+            <thead>
+            <tr style="color: white;background-color: #1d1b31">
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Quantity</th>
+                <th>Borrow</th>
+                <th>Return</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book  : ${bookPage} ">
+                <td style="width:8%" th:text="${book.id}"></td>
+                <td style="width:15%"th:text="${book.title}"></td>
+                <td style="width:15%" th:text="${book.author}"></td>
+                <td style="width:20%" th:text="${book.year}"></td>
+                <td style="width:12%" th:text="${book.quantity}"></td>
+                <td><a th:href="@{/book/borrow(id=${book.id})}"><i style="margin-left:15px" class='bx bx-paper-plane'></i></a></td>
+                <td><a th:href="@{/book/return(id=${book.id})}"><i style="margin-left:15px" class='bx bx-revision' ></i></a></td>
+                <td><a th:data-id="${book.id}" th:data-title="${book.title}" onclick="showConfirmation(this.getAttribute('data-id'),this.getAttribute('data-title'))"><i style="margin-left:15px" class='bx bxs-trash-alt' ></i></a></td>
+
+            </tr>
+            </tbody>
+        </table>
+        <div style="text-align:center;margin-top: 30px">
+            <a th:href="@{/book-page/search(title=${title},author=${author},quantity=${quantity},page=${bookPage.number - 1})}"
+               th:if="${bookPage.hasPrevious()}"><ion-icon name="chevron-back-outline"></ion-icon> Previous</a>
+            <span th:each="pageNo: ${#numbers.sequence(1,bookPage.totalPages)}">
+               <a  th:href="@{/book-page/search(title=${title},author=${author},quantity=${quantity},page = ${pageNo}-1)}" th:text="${pageNo}"  ></a>
+            </span>
+            <a th:href="@{/book-page/search(title=${title},author=${author},quantity=${quantity},page=${bookPage.number + 1})}"
+               th:if="${bookPage.hasNext()}">Next <ion-icon name="chevron-forward-outline"></ion-icon></a>
+        </div>
+    </div>
+</section>
+<div th:insert="~{/layout::script}"></div>
+<script>
+    function showConfirmation(id, title)
+    {
+        $('#bookName').text(title);
+        $('#yesOption').attr('href', '/book/delete/' + (id));
+        $('#confirmationId').modal('show')
+
+    }
+
+</script>
+
+<div class="modal" tabindex="-1" role="dialog" id="confirmationId">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Do you want to delete "<span id="bookName"></span>" ?
+            </div>
+            <div class="modal-footer">
+                <a id="yesOption" class="btn btn-primary">Yes</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

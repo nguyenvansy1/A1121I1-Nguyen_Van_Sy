@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:insert="~{/layout::head}"></div>
+<body>
+
+<div class="sidebar" >
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">Library</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <i class='bx bx-search' ></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li>
+        <li>
+            <a th:href="@{/book-page}">
+                <i class='bx bx-grid-alt'></i>
+                <span class="links_name">Book</span>
+            </a>
+            <span class="tooltip">Book</span>
+        </li>
+        <li>
+            <a th:href="@{/book-page/create}">
+                <i class='bx bx-heart' ></i>
+                <span class="links_name">Add Book</span>
+            </a>
+            <span class="tooltip">Add Book</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-folder' ></i>
+                <span class="links_name">Code</span>
+            </a>
+            <span class="tooltip">Code</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog' ></i>
+                <span class="links_name">Setting</span>
+            </a>
+            <span class="tooltip">Setting</span>
+        </li>
+        <li class="profile">
+            <div class="profile-details">
+                <!--<img src="profile.jpg" alt="profileImg">-->
+                <div class="name_job">
+                    <div class="name">Sy Nguyen</div>
+                    <div class="job">Borrow web</div>
+                </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out" ></i>
+        </li>
+    </ul>
+</div>
+
+<section class="home-section">
+    <div style="background-color: #E4E9F7; height: 50px"></div>
+    <div style="margin: 15px 200px 0px 200px">
+      <form th:action="@{/book-page/create}" method="post" th:object="${book}">
+        <div>
+            <h1 style="font-family: sans-serif; text-align: center;">Add Book</h1>
+        </div>
+          <input type="hidden" th:field="*{id}">
+        <div class="form-row" style="height: 100px">
+            <div class="form-group col-md-6">
+                <label>Title</label>
+                <input type="text"  class="form-control" name="title" placeholder="Title" th:field="*{title}">
+                <p style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Author</label>
+                <input type="text" class="form-control" name="author" placeholder="Author" th:field="*{author}">
+                <p style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></p>
+            </div>
+        </div>
+        <div class="form-row" style="height: 100px">
+            <div class="form-group col-md-6">
+                <label>Year</label>
+                <input type="date"  class="form-control" name="year" th:field="*{year}" >
+                <p style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></p>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Quantity</label>
+                <input type="number"  class="form-control" name="quantity" placeholder="Quantity" th:field="*{quantity}">
+                <p style="color:red" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></p>
+            </div>
+        </div>
+        <button type="submit" style="background-color: black; color: white;float: right;width:60px" class="btn">Add </button>
+      </form>
+    </div>
+</section>
+<div th:insert="~{/layout::script}"></div>
+</body>
+</html>

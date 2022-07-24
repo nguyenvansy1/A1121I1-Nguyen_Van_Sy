@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Title</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        * {
+            font-family: Times New Roman, Georgia, Serif;
+        }
+
+        .icon-next {
+            display: inline-block !important;
+            position: relative;
+            top: 3px;
+        }
+        .icon-back {
+            display: inline-block !important;
+            position: relative;
+            top: 3px;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/list/search}" method="get">
+    <div  class="form-row" style="margin-left: 110px">
+        <div class="form-group col-md-4">
+            <label>Name</label>
+            <input  type="text"  class="form-control" name="name">
+        </div>
+        <div class="search-1 col-md-2">
+            <button style="margin-top:20px;border:1px solid black" class="btn my-2 my-sm-0 search-hover" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+<div style="margin: 0px 100px 0px 100px " class="w3-container">
+    <table class="w3-table-all w3-hoverable">
+        <thead>
+        <tr style="color: white;background-color: #1d1b31">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Content</th>
+            <th>Year</th>
+            <th>Category</th>
+            <th><a th:href="@{/create}"><ion-icon name="add-circle-outline"></ion-icon></a></th>
+           
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="blog : ${blog}">
+            <td style="width:8%" th:text="${blog.id}"></td>
+            <td style="width:15%"th:text="${blog.name}"></td>
+            <td style="width:15%" th:text="${blog.content}"></td>
+            <td style="width:20%" th:text="${blog.year}"></td>
+            <td style="width:15%" th:text="${blog.category.name}"></td>
+            <td>
+                <a th:href="@{/edit(id=${blog.id})}"><ion-icon  name="create" style="color:black"></ion-icon></a>
+                <a th:href="@{/detele(id=${blog.id})}"><ion-icon  name="trash" style="color:black" ></ion-icon></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="text-align:center;margin-top: 30px">
+        <a th:href="@{/list/search(name=${name},page=${blog.number - 1})}"
+           th:if="${blog.hasPrevious()}"><span><ion-icon class="icon-back" name="chevron-back-outline"></ion-icon> Previous</span></a>
+        <span th:each="pageNo: ${#numbers.sequence(1,blog.totalPages)}">
+               <a  th:href="@{/list/search(name=${name},page = ${pageNo}-1)}" th:text="${pageNo}"  ></a>
+            </span>
+        <a th:href="@{/list/search(name=${name},page=${blog.number + 1})}"
+           th:if="${blog.hasNext()}"><span>Next <ion-icon class="icon-next" name="chevron-forward-outline"></ion-icon></span></a>
+    </div>
+</div>
+</body>
+</html>
