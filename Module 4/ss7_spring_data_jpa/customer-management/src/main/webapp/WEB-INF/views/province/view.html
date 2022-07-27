@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="province/list::headProvince">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="container">
+<h1>View customers in province: <span th:text="${province.name}"></span></h1>
+<br>
+<a th:href="@{/province/provinces}"><button class="btn btn-dark">Back to province list</button></a>
+<br><br>
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    <tr th:each="customer : ${list}">
+        <td th:text="${customer.firstName}"></td>
+        <td th:text="${customer.lastName}"></td>
+    </tr>
+</table>
+</body>
+</html>

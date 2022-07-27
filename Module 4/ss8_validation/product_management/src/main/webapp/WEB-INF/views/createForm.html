@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Create new product form</p>
+<a th:href="@{/product/list}">Back to product list</a>
+<form th:action="@{/product/save}" th:method="post" th:object="${product}">
+    <label th:for="id">Product Id</label>
+    <input type="text" th:field="*{id}" id="id"/>
+    <br>
+    <label th:for="name">Product name</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <span style="color: red" type="text" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"/>
+    <br>
+    <label th:for="price">Product price</label>
+    <input type="text" th:field="*{price}" id="price"/>
+    <span style="color: red" type="text" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"/>
+    <br>
+    <label th:for="description">Product description</label>
+    <input type="text" th:field="*{description}" id="description"/>
+    <span style="color: red" type="text" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"/>
+    <br>
+    <label th:for="manufacturer">Product manufacturer</label>
+    <input type="text" th:field="*{manufacturer}" id="manufacturer"/>
+    <br>
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>
