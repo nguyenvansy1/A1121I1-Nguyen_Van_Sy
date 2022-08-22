@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama</title>
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.css">
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="datatables/css/update.css">
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Home</a>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Service <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Customer <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Employee <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Contract <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="search">
+                <button class="btn btn-outline-white my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+<div>
+    <div class="card bg-dark text-white" style="margin-top: 54px">
+        <img alt="Card image" class="card-img"
+             src="img/20191211160802-763a.jpg"
+             style="height: 550px;width: 1518px">
+        <div class="card-img-overlay">
+            <h3 class="card-title" style="color: #cbbe73">Khu Nghĩ Dưỡng Cao Cấp Chuẩn Quốc Tế </br>
+                View Biển Đẹp Nhất Tại Đà Nẵng </br>
+            </h3>
+        </div>
+    </div>
+
+    <section class="get-in-touch">
+        <h1 class="title">Update Service</h1>
+        <form class="contact-form row">
+            <div class="form-field col-lg-6">
+                <input id="name" class="input-text js-input" type="text" required>
+                <label class="label" for="name">Room Name</label>
+            </div>
+            <div class="form-field col-lg-6 ">
+                <input id="kind" class="input-text js-input" type="text" required>
+                <label class="label" for="kind">Kind of room</label>
+            </div>
+            <div class="form-field col-lg-6 ">
+                <input id="rates" class="input-text js-input" type="number" required>
+                <label class="label" for="rates">Room Rates</label>
+            </div>
+            <div class="form-field col-lg-6 ">
+                <input id="view" class="input-text js-input" type="text" required>
+                <label class="label" for="view">Room View</label>
+            </div>
+            <div class="form-field col-lg-12">
+                <input id="amount" class="input-text js-input" type="number" required>
+                <label class="label" for="amount">Amount</label>
+            </div>
+            <div class="form-field col-lg-12" style="text-align: center">
+                <input class="submit-btn" type="submit" value="Update">
+            </div>
+        </form>
+    </section>
+</div>
+
+<script src="../static/jquery/jquery-3.5.1.min.js"></script>
+<script src="../static/bootstrap413/js/popper.min.js"></script>
+<script src="../static/bootstrap413/js/bootstrap.min.js"></script>
+<script src="../static/bootstrap413/js/bootstrap.bundle.js"></script>
+
+</body>
+</html>
