@@ -4,21 +4,30 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import { CustomerListComponent } from './customer/customer-list/customer-list.component';
-import { HeaderComponent } from './customer/header/header.component';
-import { ServiceListComponent } from './service/service-list/service-list.component';
+import { HeaderComponent } from './header/header.component';
+import { CustomerComponent } from './customer/customer.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import {NotifierModule} from 'angular-notifier';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerListComponent,
     HeaderComponent,
-    ServiceListComponent
+    CustomerComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NotifierModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

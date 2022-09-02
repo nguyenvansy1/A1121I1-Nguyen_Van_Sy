@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "customer_type")
@@ -15,6 +16,10 @@ public class CustomerType {
 
     @Column(name = "customer_type_name")
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customerType")
+    private Set<Customer> customers;
+
 
     public CustomerType() {
     }

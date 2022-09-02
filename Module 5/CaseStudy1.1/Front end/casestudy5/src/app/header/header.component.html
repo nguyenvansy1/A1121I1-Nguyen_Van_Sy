@@ -1,6 +1,6 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark header-navbar">
-    <a class="navbar-brand" href="#">Home</a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark header-navbar fixed-top">
+    <a class="navbar-brand" routerLink="">Home</a>
     <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
             class="navbar-toggler"
             data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Service <span class="sr-only">(current)</span></a>
+          <a class="nav-link" >Service <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Customer <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/customer">Customer <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="#">Employee <span class="sr-only">(current)</span></a>
@@ -22,10 +22,5 @@
           <a class="nav-link" href="#">Contract <span class="sr-only">(current)</span></a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="search">
-        <button class="btn btn-outline-white my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
   </nav>
-</header>
