@@ -18,17 +18,20 @@
 <app-header></app-header>
 <div class="container" id="main-container" style="margin-top: 50px">
   <div class="row">
-    <div class="col-lg-3"><button class="btn btn-primary" style="margin-left: 48px" (click)="onOpenModal( null,'add')">Add new customer</button></div>
+    <div class="col-lg-3">
+      <button class="btn btn-primary" style="margin-left: 48px" (click)="onOpenModal( null,'add')">Add new customer</button>
+    </div>
     <div class="col-lg-5">
       <select class="form-select form-select-md p-2" (change) = "setValueForFilter($event.target.value)" >
-        <option [ngValue] = "'Default'" value='0' > Tất cả </option>
+        <option [ngValue] = "'Default'" value='0' > All </option>
         <option *ngFor="let customerType of customerTypeList" value={{customerType.id}} [ngValue] = "customerType.id" > {{customerType.name}} </option>
       </select>
     </div>
     <div class="col-lg-4">
-      <form class="form-inline my-2 my-lg-0">
-        <input #myInput aria-label="Search" class="form-control mr-sm-2" placeholder="Input name" name="search" type="search" [(ngModel)]="keywordForSearch" (keyup)=(searchByName(myInput.value))>
-        <button  class="btn btn-outline-white my-2 my-sm-0 btn-dark" type="submit" (click) = "clearSearchKeyword()">Search</button>
+      <form class="form-inline my-2 my-lg-0" style="margin-left: 60px">
+        <span>Search:   </span>
+        <input style="margin-left: 5px" #myInput aria-label="Search" class="form-control mr-sm-2" placeholder="Input name" name="search" type="search" [(ngModel)]="keywordForSearch" (keyup)=(searchByName(myInput.value))>
+<!--        <button  class="btn btn-outline-white my-2 my-sm-0 btn-dark" type="submit" (click) = "clearSearchKeyword()">Search</button>-->
       </form>
     </div>
   </div>
@@ -62,20 +65,24 @@
     </tr>
     </tbody>
   </table>
+  <div style="margin-left: 70px" *ngIf="customers?.length == 0" class="alert alert-warning text-center" role="alert">
+    <b>Không tìm thấy customer</b>
+  </div>
 </div>
 
-<div  style="margin-left: 300px;margin-top: 50px">
+<div  style="margin-left: 260px;margin-top: 50px">
   <div class="row " >
     <div class="col-md-3 pl-2 mt-2">
-              <span class="ml-2">
-                &nbsp;&nbsp; Hiển thị
-              </span>
-      <select (change) = "updatePageSize($event.target.value)">
+      <span>Show </span>
+      <select class="btn btn-outline-white border-dark" (change) = "updatePageSize($event.target.value)">
         <option selected >5</option>
         <option >10</option>
         <option >20</option>
         <option >50</option>
       </select>
+      <span>
+        entries
+      </span>
     </div>
     <div class="col-md-4 mt-2" style="text-align: right; color: black;">
       Hiển thị {{ (thePageNumber - 1) * thePageSize + 1 }} - {{ itemPerPage }} của {{ theTotalElements }}
@@ -113,9 +120,10 @@
         <form [formGroup]="formCreate" (ngSubmit)="onAddCustomer(formCreate)">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text"  name="name" class="form-control" id="name" placeholder="Name" required formControlName="name">
-            <p *ngIf="formCreate.controls.name.touched && formCreate.controls.name.errors?.required" style="color: red">Required Input</p>
-<!--            <p *ngIf="formCreate.controls.name.touched && formCreate.controls.name.errors?.invalidUrl" style="color: red">Required Input 4</p>-->
+            <input type="text"  name="name" class="form-control" id="name" placeholder="Name" required formControlName="name" [ngClass]="{'is-invalid':formCreate.controls.name.dirty && formCreate.controls.name.errors?.invalidName}">
+            <p *ngIf="formCreate.controls.name.dirty && formCreate.controls.name.errors?.invalidName" style="color: red">Name must start with Nguyen</p>
+            <p *ngIf="customerErr?.name">{{customerErr?.name}}</p>
+<!--            <p *ngIf="formCreate.controls.name.dirty && formCreate.controls.name.errors?.required" style="color: red">Required input</p>-->
           </div>
           <div class="form-group">
             <label for="birthDay">BirthDay</label>
@@ -127,11 +135,13 @@
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="text"  name="phone" class="form-control" id="phone" placeholder="Phone" required formControlName="phone">
+            <input type="text"  name="phone" class="form-control" id="phone" placeholder="Phone" required formControlName="phone" [ngClass]="{'is-invalid':formCreate.controls.phone.dirty && formCreate.controls.phone.errors?.pattern}">
+            <p *ngIf="formCreate.controls.phone.dirty && formCreate.controls.phone.errors?.pattern" style="color: red">Phone with format +84xxxxxxxxx or 0xxxxxxxxx</p>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email"  name="email" class="form-control" id="email" placeholder="Email" required formControlName="email">
+            <input type="email"  name="email" class="form-control" id="email" placeholder="Email" required formControlName="email" [ngClass]="{'is-invalid':formCreate.controls.email.dirty && formCreate.controls.email.errors?.email}">
+            <p *ngIf="formCreate.controls.email.dirty && formCreate.controls.email.errors?.email" style="color: red">Wrong email format</p>
           </div>
           <div class="form-group">
             <label for="address">Address</label>
@@ -146,7 +156,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" id="add-customer-form"  class="btn btn-secondary" (click)="resetForm(formCreate)" data-dismiss="modal">Close</button>
-            <button [disabled]="formCreate.invalid" type="submit" class="btn btn-primary" >Save change</button>
+            <button [disabled]="formCreate.invalid"  type="submit" class="btn btn-primary" >Save change</button>
+<!--            [disabled]="formCreate.invalid"-->
           </div>
         </form>
       </div>
@@ -200,7 +211,7 @@
             <label for="exampleFormControlSelect1">Customer Type</label>
             <select class="form-control"  formControlName="customerType">
               <option [ngValue]="'Default'" disabled>-- Select --</option>
-              <option *ngFor="let customerType of customerTypeList" [ngValue] = "customerType"   >{{customerType.name}}</option>
+              <option *ngFor="let customerType of customerTypeList" [ngValue] = "customerType" [selected]="customerType?.id == customerTypeEdit?.id">{{customerType.name}}</option>
             </select>
 <!--            [selected]="customerType.id == customerTypeEdit.id"-->
           </div>

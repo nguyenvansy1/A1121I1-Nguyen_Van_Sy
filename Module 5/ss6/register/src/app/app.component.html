@@ -1,0 +1,70 @@
+
+<div class="form" style="text-align: -webkit-center" >
+  <h2>  Create Registration Form</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group col-md-6">
+      <label style="margin-right: 500rem; font-size: 1.5rem" for="email">Email: </label>
+      <input type="text" class="form-control" id="email" name="email" formControlName="email">
+    </div>
+    <div *ngIf="!contactForm.controls.email?.valid && (contactForm.controls.email?.dirty || contactForm.controls.email?.touched)">
+      <p class="form-group col-md-7" style="margin-right: 600px; color: red" >Phải đúng định dạng</p>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label style="margin-right: 500rem; font-size: 1.5rem" for="password">Password: </label>
+      <input class="form-control" type="text" id="password" name="password" formControlName="password">
+    </div>
+    <div *ngIf="!contactForm.controls.password?.valid && (contactForm.controls.password?.dirty || contactForm.controls.password?.touched)">
+      <p class="form-group col-md-7" style="margin-right: 650px; color: red">Ít nhất 6 kí tự</p>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label style="margin-right: 500rem; font-size: 1.5rem" for="confirmPassword">ConfirmPassword: </label>
+      <input type="text" class="form-control" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+    </div>
+    <div *ngIf="!contactForm.controls.confirmPassword?.valid && (contactForm.controls.confirmPassword?.dirty || contactForm.controls.confirmPassword?.touched)">
+      <p class="form-group col-md-7" style="margin-right: 600px; color: red">Phải khới Với ở trên</p>
+    </div>
+    <!--  <div class="alert alert-danger" role = "alert"-->
+    <!--       *ngIf="contactForm.hasError('passwordnotmatch',['pwGroup']) && contactForm.get('pwGroup').touched">-->
+    <!--    Password does not match!-->
+    <!--  </div>-->
+
+    <div class="form-group col-md-6" style=" font-size: 1.5rem" >
+      <label style="margin-right: 500rem; font-size: 1.5rem" for="gender">Gender: </label>
+      <input type="radio" class="custom-radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+      <input type="radio" class="custom-radio" value="female" id="gender" name="gender" formControlName="gender"> Female
+    </div>
+    <div *ngIf="!contactForm.controls.gender?.valid && (contactForm.controls.gender?.dirty || contactForm.controls.gender?.touched)">
+      <p class="form-group col-md-7" style="margin-right: 600px; color: red">Không được để trống</p>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label style="margin-right: 500rem; font-size: 1.5rem" for="age">Age: </label>
+      <input type="text" class="form-control" id="age" name="age" formControlName="age">
+    </div>
+    <div *ngIf="!contactForm.controls.age?.valid && (contactForm.controls.age?.dirty || contactForm.controls.age?.dirty)">
+      <p class="form-group col-md-7" style="margin-right: 600px; color: red" >Lớn hơn 18 tuổi</p>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label style="margin-right: 500rem; font-size: 1.5rem" for="phone">Phone: </label>
+      <input type="text" class="form-control" id="phone" name="phone" formControlName="phone">
+    </div>
+    <div *ngIf="!contactForm.controls.phone?.valid && (contactForm.controls.phone?.dirty || contactForm.controls.phone?.touched)">
+      <p class="form-group col-md-7" style="margin-right: 580px; color: red" >Không đính định dạng</p>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label style="margin-right: 500rem; font-size: 1.5rem" for="country">Country: </label>
+      <select id="country" class="custom-select" name="country" formControlName="country">
+        <option [ngValue]="c.name" *ngFor="let c of countryList">
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button style="display: inline-block"  class="btn-success" type="submit" [disabled]="!contactForm.valid">Submit</button>
+    </div>
+  </form>
+</div>

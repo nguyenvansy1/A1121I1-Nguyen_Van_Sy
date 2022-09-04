@@ -7,6 +7,8 @@ import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "customer")
@@ -16,21 +18,28 @@ public class Customer {
     @Column(name = "customer_id")
     private Integer id;
 
+    @NotNull(message ="Name can not null")
+    @NotBlank(message ="Name can not blank")
     @Column(name = "customer_name")
     private String name;
 
+    @NotNull(message ="BirthDay can not null")
     @Column(name = "customer_birthday")
     private String birthDay;
 
+    @NotNull(message ="Id card can not null")
     @Column(name = "customer_id_card")
     private Integer idCard;
 
+    @NotNull(message ="Phone can not null")
     @Column(name = "customer_phone")
     private String phone;
 
+    @NotNull(message ="Email can not null")
     @Column(name = "customer_email")
     private String email;
 
+    @NotNull(message ="Address can not null")
     @Column(name = "customer_address")
     private String address;
 

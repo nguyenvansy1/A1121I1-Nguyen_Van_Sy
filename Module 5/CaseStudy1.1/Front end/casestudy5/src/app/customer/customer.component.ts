@@ -7,7 +7,8 @@ import {CustomerType} from '../../model/customerType';
 import {CustomerTypeService} from '../../service/customer-type.service';
 import {NotifierService} from 'angular-notifier';
 import {ActivatedRoute} from '@angular/router';
-import {ValidateUrl} from '../vadilator/url.validator';
+import {ValidateName} from '../vadilator/custom.validator';
+
 
 @Component({
   selector: 'app-customer',
@@ -17,6 +18,7 @@ import {ValidateUrl} from '../vadilator/url.validator';
 export class CustomerComponent implements OnInit {
   customers: Customer[];
   deleteCustomer: Customer;
+  customerErr: Customer ;
   formCreate: FormGroup;
   formEdit: FormGroup;
   customerTypeList: CustomerType[];
@@ -28,6 +30,7 @@ export class CustomerComponent implements OnInit {
   keywordForSearch: undefined;
   valueForFilter: 0;
 
+
   constructor(private customerService: CustomerService, private fb: FormBuilder, private customerTypeService: CustomerTypeService,
               private notifier: NotifierService, private routerActive: ActivatedRoute) {
   }
@@ -38,11 +41,11 @@ export class CustomerComponent implements OnInit {
 
     this.formCreate = this.fb.group(
       {
-        name: ['', [Validators.required]],
+        name: ['', [Validators.required, ValidateName]],
         birthDay: [],
         idCard: [],
-        phone: [],
-        email: [],
+        phone: ['', [Validators.pattern('(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})')]],
+        email: ['', Validators.email],
         address: [],
         customerType: []
       }
@@ -114,18 +117,24 @@ export class CustomerComponent implements OnInit {
       (data: Customer) => {
         this.listCustomers();
         this.notifier.notify('success', 'Add customer successfully');
+        console.log(1);
         addForm.reset();
+        console.log(2);
         this.formCreate.get('customerType').setValue('Default');
       },
       (error: HttpErrorResponse) => {
-        alert(error.message);
+        this.customerErr = error.error;
       }
     );
   }
 
   public onUpdateCustomer(editForm: FormGroup): void {
+    if (editForm.value.customerType === 'Default') {
+      this.formEdit.controls.customerType.setValue(null);
+    }
     this.customerService.updateCustomer(editForm.value).subscribe(
       (data: Customer) => {
+        this.formEdit.get('customerType').setValue('Default');
         console.log(editForm.value);
         this.listCustomers();
         this.notifier.notify('success', 'Edit customer successfully');
@@ -169,7 +178,7 @@ export class CustomerComponent implements OnInit {
       this.formEdit.controls.email.setValue(customer.email);
       this.formEdit.controls.address.setValue(customer.address);
       // this.formEdit.controls.customerType.setValue(customer.customerType);
-      // this.customerTypeEdit = customer.customerType;
+      this.customerTypeEdit = customer.customerType;
       this.formEdit.get('customerType').setValue('Default');
       console.log(customer.customerType);
       button.setAttribute('data-target', '#editCustomerModal');
@@ -189,6 +198,7 @@ export class CustomerComponent implements OnInit {
   }
 
   searchByName(value: string) {
+    value = value.trim();
     if (this.valueForFilter !== undefined) {
       this.searchByNameAndCategory(value);
     } else {
