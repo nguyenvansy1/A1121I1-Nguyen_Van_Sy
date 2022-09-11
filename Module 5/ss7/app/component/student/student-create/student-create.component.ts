@@ -1,0 +1,45 @@
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Student} from "../../../model/student";
+import {AbstractControl, FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
+import {StudentService} from "../../../service/student.service";
+import {Router} from "@angular/router";
+
+@Component({
+  selector: 'app-student-create',
+  templateUrl: './student-create.component.html',
+  styleUrls: ['./student-create.component.css']
+})
+export class StudentCreateComponent implements OnInit {
+  student: Student = new Student(0, "", "", 0);
+  studentForm: FormGroup;
+
+  constructor(private studentService: StudentService, private router: Router) {
+    this.studentForm= new FormGroup({
+      id: new FormControl("",[Validators.required, Validators.min(0)]),
+      name: new FormControl("",[Validators.required, Validators.minLength(5)]),
+      dateOfBirth: new FormControl(),
+      point: new FormControl("",this.validateCustomPoint),
+    })
+  }
+  validateCustomPoint(point: AbstractControl) {
+    let value = point.value;
+    if(value<=0) {
+      return {'invalid0': true}
+    } else {
+      return null;
+    }
+  }
+
+  ngOnInit(): void {
+  }
+
+  createStudent() {
+    // this.submitCreate.emit(this.student);
+    // this.student = new Student(0, "", "", 0);
+    console.log(this.studentForm)
+    if(this.studentForm.valid) {
+      this.studentService.addStudent(this.studentForm.value);
+      this.router.navigateByUrl("");
+    }
+  }
+}

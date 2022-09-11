@@ -112,18 +112,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="addCustomerModalLabel">Add Customer</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close" (click)="resetForm(formCreate)">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close"  (click)="resetForm()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="formCreate" (ngSubmit)="onAddCustomer(formCreate)">
+        <form [formGroup]="formCreate"  (ngSubmit)="onAddCustomer(formCreate)" >
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text"  name="name" class="form-control" id="name" placeholder="Name" required formControlName="name" [ngClass]="{'is-invalid':formCreate.controls.name.dirty && formCreate.controls.name.errors?.invalidName}">
-            <p *ngIf="formCreate.controls.name.dirty && formCreate.controls.name.errors?.invalidName" style="color: red">Name must start with Nguyen</p>
-            <p *ngIf="customerErr?.name">{{customerErr?.name}}</p>
-<!--            <p *ngIf="formCreate.controls.name.dirty && formCreate.controls.name.errors?.required" style="color: red">Required input</p>-->
+            <input type="text"  name="name" class="form-control" id="name" placeholder="Name" required formControlName="name" [ngClass]="{'is-invalid':(formCreate.controls.name.dirty || formCreate.controls.name.touched) && formCreate.controls.name.errors?.invalidName}">
+<!--            <p *ngIf="(formCreate.controls.name.dirty || formCreate.controls.name.touched) && formCreate.controls.name.errors?.invalidName" style="color: red">Name must start with Nguyen</p>-->
+            <p style="color: red" *ngIf="customerErr?.name && checkValidate == false ">{{customerErr?.name}}</p>
+<!--            <p *ngIf="(formCreate.controls.name.dirty || formCreate.controls.name.touched) && formCreate.controls.name.errors?.required" style="color: red">Required input</p>-->
           </div>
           <div class="form-group">
             <label for="birthDay">BirthDay</label>
@@ -132,32 +132,37 @@
           <div class="form-group">
             <label for="idCard">Id Card</label>
             <input type="text"  name="idCard" class="form-control" id="idCard" placeholder="Id Card" required formControlName="idCard">
+            <p style="color: red" *ngIf="customerErr?.idCard">{{customerErr?.idCard}}</p>
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
             <input type="text"  name="phone" class="form-control" id="phone" placeholder="Phone" required formControlName="phone" [ngClass]="{'is-invalid':formCreate.controls.phone.dirty && formCreate.controls.phone.errors?.pattern}">
             <p *ngIf="formCreate.controls.phone.dirty && formCreate.controls.phone.errors?.pattern" style="color: red">Phone with format +84xxxxxxxxx or 0xxxxxxxxx</p>
+            <p style="color: red" *ngIf="customerErr?.phone">{{customerErr?.phone}}</p>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email"  name="email" class="form-control" id="email" placeholder="Email" required formControlName="email" [ngClass]="{'is-invalid':formCreate.controls.email.dirty && formCreate.controls.email.errors?.email}">
             <p *ngIf="formCreate.controls.email.dirty && formCreate.controls.email.errors?.email" style="color: red">Wrong email format</p>
+            <p style="color: red" *ngIf="customerErr?.email">{{customerErr?.email}}</p>
           </div>
           <div class="form-group">
             <label for="address">Address</label>
             <input type="text"  name="address" class="form-control" id="address" placeholder="Address" required formControlName="address">
+            <p style="color: red" *ngIf="customerErr?.address">{{customerErr?.address}}</p>
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Customer Type</label>
             <select class="form-control" id="exampleFormControlSelect1" formControlName="customerType" >
-              <option [ngValue]="'Default'" disabled>-- Select --</option>
+              <option [ngValue]="null" >-- Select --</option>
               <option *ngFor="let customerType of customerTypeList" [ngValue] = "customerType" >{{customerType.name}}</option>
             </select>
+            <p style="color: red" *ngIf="customerErr?.customerType">{{customerErr?.customerType}}</p>
           </div>
           <div class="modal-footer">
-            <button type="button" id="add-customer-form"  class="btn btn-secondary" (click)="resetForm(formCreate)" data-dismiss="modal">Close</button>
-            <button [disabled]="formCreate.invalid"  type="submit" class="btn btn-primary" >Save change</button>
-<!--            [disabled]="formCreate.invalid"-->
+            <button type="button" id="add-customer-form"  class="btn btn-secondary"   data-dismiss="modal">Close</button>
+            <button  type="submit" class="btn btn-primary"  >Save change</button>
+<!--     [disabled]="formCreate.invalid"       -->
           </div>
         </form>
       </div>

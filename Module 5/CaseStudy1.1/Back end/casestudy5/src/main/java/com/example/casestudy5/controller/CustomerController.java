@@ -5,18 +5,22 @@ import com.example.casestudy5.model.CustomerType;
 import com.example.casestudy5.service.Impl.CustomerService;
 import com.example.casestudy5.service.Impl.CustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Controller
 @RestController
@@ -148,4 +152,25 @@ public class CustomerController {
         });
         return errors;
     }
+
+//    @PostMapping("/add")
+//    @ResponseBody
+//    public ResponseEntity<Object> saveCustomer(@Valid @RequestBody Customer customer, BindingResult result)
+//    {
+//        if (result.hasErrors()) {
+//            List<String> errors = result.getAllErrors().stream()
+//                    .map(DefaultMessageSourceResolvable::getDefaultMessage)
+//                    .collect(Collectors.toList());
+//            return new ResponseEntity<>(errors, HttpStatus.OK);
+//        } else {
+//            if (customer.getName().length() <10) {
+//                return new ResponseEntity<>(
+//                        Collections.singletonList("Name invalid!"),
+//                        HttpStatus.BAD_REQUEST);
+//            } else {
+//                customerService.createCustomer(customer);
+//                return new ResponseEntity<>(HttpStatus.CREATED);
+//            }
+//        }
+//    }
 }

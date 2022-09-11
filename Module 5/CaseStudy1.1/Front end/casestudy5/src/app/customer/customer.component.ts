@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {CustomerService} from '../../service/customer.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpErrorResponse} from '@angular/common/http';
 import {CustomerType} from '../../model/customerType';
 import {CustomerTypeService} from '../../service/customer-type.service';
@@ -18,7 +18,7 @@ import {ValidateName} from '../vadilator/custom.validator';
 export class CustomerComponent implements OnInit {
   customers: Customer[];
   deleteCustomer: Customer;
-  customerErr: Customer ;
+  customerErr: Customer;
   formCreate: FormGroup;
   formEdit: FormGroup;
   customerTypeList: CustomerType[];
@@ -29,6 +29,7 @@ export class CustomerComponent implements OnInit {
   itemPerPage = 1;
   keywordForSearch: undefined;
   valueForFilter: 0;
+  checkValidate = false;
 
 
   constructor(private customerService: CustomerService, private fb: FormBuilder, private customerTypeService: CustomerTypeService,
@@ -41,16 +42,26 @@ export class CustomerComponent implements OnInit {
 
     this.formCreate = this.fb.group(
       {
-        name: ['', [Validators.required, ValidateName]],
-        birthDay: [],
-        idCard: [],
-        phone: ['', [Validators.pattern('(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})')]],
-        email: ['', Validators.email],
-        address: [],
+        name: ['', ValidateName],
+        birthDay: [''],
+        idCard: [''],
+        phone: [''],
+        email: [''],
+        address: [''],
         customerType: []
       }
     );
-    this.formCreate.get('customerType').setValue('Default');
+    // this.formCreate = this.fb.group(
+    //   {
+    //     name: ['', Validators.compose([ValidateName])],
+    //     birthDay: [''],
+    //     idCard: [''],
+    //     phone: ['', [Validators.pattern('(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})')]],
+    //     email: ['', Validators.email],
+    //     address: [''],
+    //     customerType: []
+    //   }
+    // );
     this.customerTypeService.getAllCustomerType().subscribe(
       data => {
         this.customerTypeList = data;
@@ -111,18 +122,18 @@ export class CustomerComponent implements OnInit {
   }
 
   public onAddCustomer(addForm: FormGroup): void {
+    this.checkValidate = false;
     // document.getElementById('add-customer-form').click();
     console.log(addForm.value);
     this.customerService.addCustomer(addForm.value).subscribe(
       (data: Customer) => {
         this.listCustomers();
         this.notifier.notify('success', 'Add customer successfully');
-        console.log(1);
         addForm.reset();
-        console.log(2);
         this.formCreate.get('customerType').setValue('Default');
       },
       (error: HttpErrorResponse) => {
+        console.log(error);
         this.customerErr = error.error;
       }
     );
@@ -192,11 +203,12 @@ export class CustomerComponent implements OnInit {
   }
 
 
-  resetForm(formCreate: FormGroup) {
-    formCreate.reset();
-    this.formCreate.get('customerType').setValue('Default');
+  resetForm() {
+    console.log('A');
+    // event.currentTarget.reset();
+    this.checkValidate = true;
+    this.formCreate.reset();
   }
-
   searchByName(value: string) {
     value = value.trim();
     if (this.valueForFilter !== undefined) {
@@ -225,25 +237,26 @@ export class CustomerComponent implements OnInit {
 
   filterByCustomerType(value) {
     if (value === '0') {
-         this.valueForFilter = undefined;
-         this.listCustomers();
+      this.valueForFilter = undefined;
+      this.listCustomers();
     } else {
       this.customerService.getCustomerByCustomerType(this.thePageNumber - 1, this.thePageSize, value).subscribe(this.processResult());
     }
   }
+
   searchByNameAndCategory(value: string) {
-        if (value === '' && this.valueForFilter.toString() === '0') {
-          this.valueForFilter = undefined;
-          this.keywordForSearch = undefined;
-          this.listCustomers();
-        } else {
-          if (value !== '' && this.valueForFilter.toString() === '0') {
-            this.valueForFilter = undefined;
-            this.listCustomers();
-          } else {
-            this.customerService.getCustomerByNameAndCustomerType(this.thePageNumber - 1, this.thePageSize, this.valueForFilter, value)
-              .subscribe(this.processResult());
-          }
-        }
+    if (value === '' && this.valueForFilter.toString() === '0') {
+      this.valueForFilter = undefined;
+      this.keywordForSearch = undefined;
+      this.listCustomers();
+    } else {
+      if (value !== '' && this.valueForFilter.toString() === '0') {
+        this.valueForFilter = undefined;
+        this.listCustomers();
+      } else {
+        this.customerService.getCustomerByNameAndCustomerType(this.thePageNumber - 1, this.thePageSize, this.valueForFilter, value)
+          .subscribe(this.processResult());
+      }
     }
+  }
 }

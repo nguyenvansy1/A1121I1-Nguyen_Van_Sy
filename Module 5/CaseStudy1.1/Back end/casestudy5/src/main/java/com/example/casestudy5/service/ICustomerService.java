@@ -1,6 +1,7 @@
 package com.example.casestudy5.service;
 
 import com.example.casestudy5.model.Customer;
+
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public interface ICustomerService {
 
     Page<Customer> getAllPaginate(Integer page, Integer size);
 
-    void createCustomer(Customer customer);
+    void createCustomer(Customer customer) ;
 
     void deleteCustomer(Integer id);
 

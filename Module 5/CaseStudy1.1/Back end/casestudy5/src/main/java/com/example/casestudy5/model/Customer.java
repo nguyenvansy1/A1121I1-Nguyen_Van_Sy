@@ -1,10 +1,7 @@
 package com.example.casestudy5.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -12,18 +9,17 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "customer")
-public class Customer {
+public class Customer implements Validator {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Integer id;
 
-    @NotNull(message ="Name can not null")
+
     @NotBlank(message ="Name can not blank")
     @Column(name = "customer_name")
     private String name;
 
-    @NotNull(message ="BirthDay can not null")
     @Column(name = "customer_birthday")
     private String birthDay;
 
@@ -31,18 +27,19 @@ public class Customer {
     @Column(name = "customer_id_card")
     private Integer idCard;
 
-    @NotNull(message ="Phone can not null")
+    @NotBlank(message ="Phone can not blank")
     @Column(name = "customer_phone")
     private String phone;
 
-    @NotNull(message ="Email can not null")
+    @NotBlank(message ="Email can not blank")
     @Column(name = "customer_email")
     private String email;
 
-    @NotNull(message ="Address can not null")
+    @NotBlank(message ="Address can not blank")
     @Column(name = "customer_address")
     private String address;
 
+    @NotNull(message = "Customer Type can not null")
     @ManyToOne
     @JoinColumn(name = "customer_type_id")
     private CustomerType customerType;
@@ -123,5 +120,18 @@ public class Customer {
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        Customer customer = (Customer) target;
+        if (customer.getName().length() < 10){
+            errors.rejectValue("name","NameLength","HiHi");
+        }
     }
 }

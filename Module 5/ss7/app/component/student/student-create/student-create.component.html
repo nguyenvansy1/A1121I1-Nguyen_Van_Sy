@@ -1,0 +1,23 @@
+<!--Id: <input type="text" [(ngModel)]="student.id"><br>-->
+<!--Name: <input type="text"[(ngModel)]="student.name"><br>-->
+<!--Date of birth: <input type="date" [(ngModel)]="student.dateOfBirth"><br>-->
+<!--Point: <input type="text" [(ngModel)]="student.point"><br>-->
+<!--<button (click)="createStudent()">Create</button>-->
+<!--<form #registerForm ="ngForm" (ngSubmit)="createStudentWithForm(registerForm)">-->
+<!--  Id: <input type="text" ngModel name="id" required><br>-->
+<!--  Name: <input type="text" ngModel name="name"><br>-->
+<!--  Date of birth: <input type="date" ngModel name="dateOfBirth"><br>-->
+<!--  Point: <input type="text" ngModel name="point"><br>-->
+<!--  <button type="submit">Create</button>-->
+<!--</form>-->
+<form (ngSubmit)="createStudent()" [formGroup]="studentForm">
+    Id: <input type="text" formControlName="id"><br>
+  <p style="color:red;" *ngIf="studentForm.controls.id.hasError('required') && studentForm.controls.id.pristine">Id không được để trống</p>
+    Name: <input type="text" formControlName="name"><br>
+  <p style="color:red;" *ngIf="studentForm.controls.name.hasError('minlength') && studentForm.controls.name.dirty">Name ít nhất 5 kí tự</p>
+    Date of birth: <input type="date" formControlName="dateOfBirth"><br>
+    Point: <input type="text" formControlName="point"><br>
+  <p style="color:red;" *ngIf="studentForm.controls.point.hasError('invalid0') ">Điểm không được nhỏ hơn 0</p>
+    <button type="submit">Create</button>
+</form>
+<i class='fab fa-facebook'></i>

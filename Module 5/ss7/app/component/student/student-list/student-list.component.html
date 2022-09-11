@@ -1,0 +1,26 @@
+<div class="container">
+<button routerLink="/create">Create Student</button>
+  <table width="700px" border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date of birth</th>
+    <th>Point</th>
+    <th>Rank</th>
+    <th>Detail</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{student.id}}</td>
+    <td>{{student.name | uppercase}}</td>
+    <td>{{student.dateOfBirth | date: "dd/MM/yyyy"}}</td>
+    <td>{{student.point}}</td>
+    <td>
+      <p *ngIf="student.point<8;else temp">Not good</p>
+      <p *ngIf="student.point>=8&&student.point<9">Good</p>
+      <p *ngIf="student.point>=9">Very Good</p>
+      <ng-template #temp>Hello</ng-template>
+    </td>
+    <td><button [routerLink]="['/info', student.id, student.name]">Detail</button></td>
+  </tr>
+</table>
+</div>

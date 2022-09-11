@@ -1,0 +1,19 @@
+<h2 style="text-align: center">Danh sách từ điển</h2>
+<table class="table table-primary" style="text-align: center" >
+  <thead>
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Word</th>
+    <th scope="col">Mean</th>
+    <th scope="col">Detail</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let dictionary of dictionaries; index as i">
+    <td>{{dictionary.id}}</td>
+    <td>{{dictionary.word}}</td>
+    <td>{{dictionary.mean}}</td>
+    <td><button class="btn btn-warning" [routerLink]="['/detail', dictionary.id]">Detail</button></td>
+  </tr>
+  </tbody>
+</table>
