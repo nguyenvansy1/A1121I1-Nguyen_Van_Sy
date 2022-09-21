@@ -19,7 +19,156 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce65f08a-948f-4806-bcf4-983121fc9435" name="Default Changelist" comment="" />
+    <list default="true" id="ce65f08a-948f-4806-bcf4-983121fc9435" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../Module 1/TestData/Test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 1/TestData/Test2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 1/TestData/list_detail/list_detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 1/TestData/list_detail/list_detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/BE-Capstone1/src/main/java/com/example/becapstone1/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/BE-Capstone1/src/main/java/com/example/becapstone1/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/BE-Capstone1/src/main/java/com/example/becapstone1/repository/IUserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/BE-Capstone1/src/main/java/com/example/becapstone1/service/IUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/BE-Capstone1/src/main/java/com/example/becapstone1/service/Impl/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/customer-management/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/customer-management/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/customer-management/src/main/java/customer_management/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss7_spring_data_jpa/customer-management/src/main/java/customer_management/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss8_validation/product_management/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss8_validation/product_management/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss8_validation/product_management/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss8_validation/product_management/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss8_validation/product_management/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss8_validation/product_management/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss8_validation/product_management/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss8_validation/product_management/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss9_aop_and_exception/Borrow Book Web/src/main/java/com/example/book/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss9_aop_and_exception/Borrow Book Web/src/main/java/com/example/book/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss9_aop_and_exception/Borrow Book Web/src/main/java/com/example/book/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss9_aop_and_exception/Borrow Book Web/src/main/java/com/example/book/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Module 4/ss9_aop_and_exception/Borrow Book Web/src/main/resources/templates/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Module 4/ss9_aop_and_exception/Borrow Book Web/src/main/resources/templates/test1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/lib/javax.ejb.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/lib/javax.jms.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/lib/javax.resource.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/lib/javax.servlet.jsp.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/lib/javax.servlet.jsp.jstl.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/Casestudy5Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/exception/CustomerNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/model/CustomerType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/repository/ICustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/repository/ICustomerTypeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/service/ICustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/service/ICustomerTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/service/Impl/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/java/com/example/casestudy5/service/Impl/CustomerTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/main/resources/vadidate/messages.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Back end/casestudy5/src/test/java/com/example/casestudy5/Casestudy5ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/customer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/customer/customer.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/customer/customer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/customer/customer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/footer/footer.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/footer/footer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/footer/footer.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/footer/footer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/header/header.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/header/header.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/header/header.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/header/header.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/app/vadilator/custom.validator.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/bootstrap/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.bootstrap4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.foundation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.foundation.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.jqueryui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.jqueryui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.semanticui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/dataTables.semanticui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/jquery.dataTables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/css/jquery.dataTables.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/images/sort_asc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/images/sort_asc_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/images/sort_both.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/images/sort_desc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/images/sort_desc_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.bootstrap4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.foundation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.foundation.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.jqueryui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.jqueryui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.semanticui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/dataTables.semanticui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/jquery.dataTables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/assets/datatables/js/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/data/customer1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/model/customer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/model/customerType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/service/customer-type.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/service/customer.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/service/notification.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CaseStudy1.1/Front end/casestudy5/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/casestudy5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/casestudy5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +177,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -45,7 +195,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../CaseStudy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Nguyen_Van_Sy/GIT/Capstone-1/FE-Capstone1" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -59,11 +210,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\A1121I1-Nguyen_Van_Sy\Module 5\CaseStudy1.1\Front end\casestudy5\src\app" />
       <recent name="D:\A1121I1-Nguyen_Van_Sy\Module 5\CaseStudy1\Front end\casestudy5\src\model" />
       <recent name="D:\A1121I1-Nguyen_Van_Sy\Module 5\CaseStudy1\Front end\casestudy5\src\service" />
       <recent name="D:\A1121I1-Nguyen_Van_Sy\Module 5\CaseStudy1\Front end\casestudy5\src\app\model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\A1121I1-Nguyen_Van_Sy\Module 5\CaseStudy1.1\Front end\casestudy5\src\service" />
+      <recent name="D:\A1121I1-Nguyen_Van_Sy\Module 5\CaseStudy1.1\Front end\casestudy5\src\app" />
       <recent name="D:\A1121I1-Nguyen_Van_Sy\Module 5\CaseStudy1\Front end\casestudy5\src\assets" />
     </key>
   </component>
@@ -119,9 +273,95 @@
       <workItem from="1661511311507" duration="9076000" />
       <workItem from="1661542611277" duration="77000" />
       <workItem from="1661543096902" duration="65000" />
-      <workItem from="1661544894653" duration="639000" />
-      <workItem from="1661552091023" duration="250000" />
-      <workItem from="1661992121570" duration="20000" />
+      <workItem from="1661552354261" duration="786000" />
+      <workItem from="1661606697932" duration="1206000" />
+      <workItem from="1661614321896" duration="13174000" />
+      <workItem from="1661726123364" duration="573000" />
+      <workItem from="1661732069906" duration="4501000" />
+      <workItem from="1661742486748" duration="6631000" />
+      <workItem from="1661775409166" duration="1559000" />
+      <workItem from="1661819052802" duration="4057000" />
+      <workItem from="1661830924702" duration="262000" />
+      <workItem from="1661836463388" duration="1492000" />
+      <workItem from="1661837984471" duration="4969000" />
+      <workItem from="1661867734488" duration="7349000" />
+      <workItem from="1661876244861" duration="753000" />
+      <workItem from="1661880951320" duration="7844000" />
+      <workItem from="1661947980920" duration="6745000" />
+      <workItem from="1661955173732" duration="343000" />
+      <workItem from="1661975636435" duration="56000" />
+      <workItem from="1661976084570" duration="3023000" />
+      <workItem from="1661987942575" duration="255000" />
+      <workItem from="1661992320468" duration="4395000" />
+      <workItem from="1661999157675" duration="3445000" />
+      <workItem from="1662044986779" duration="8042000" />
+      <workItem from="1662053308862" duration="5295000" />
+      <workItem from="1662074610026" duration="9016000" />
+      <workItem from="1662090958862" duration="5944000" />
+      <workItem from="1662105787172" duration="7498000" />
+      <workItem from="1662130167205" duration="2755000" />
+      <workItem from="1662144010902" duration="589000" />
+      <workItem from="1662168714883" duration="654000" />
+      <workItem from="1662185091809" duration="5258000" />
+      <workItem from="1662219740649" duration="3098000" />
+      <workItem from="1662232705204" duration="3691000" />
+      <workItem from="1662255374293" duration="2569000" />
+      <workItem from="1662266242832" duration="430000" />
+      <workItem from="1662269397904" duration="5025000" />
+      <workItem from="1662336224044" duration="2833000" />
+      <workItem from="1662350451815" duration="7390000" />
+      <workItem from="1662379948652" duration="4988000" />
+      <workItem from="1662387052117" duration="378000" />
+      <workItem from="1662393764367" duration="1172000" />
+      <workItem from="1662431198401" duration="318000" />
+      <workItem from="1662512226269" duration="612000" />
+      <workItem from="1662552891201" duration="4699000" />
+      <workItem from="1662698017349" duration="760000" />
+      <workItem from="1662707057773" duration="185000" />
+      <workItem from="1662712673394" duration="2075000" />
+      <workItem from="1662720811522" duration="435000" />
+      <workItem from="1662727306261" duration="30000" />
+      <workItem from="1662729506592" duration="2985000" />
+      <workItem from="1662864655981" duration="969000" />
+      <workItem from="1662874041497" duration="6297000" />
+      <workItem from="1662881774763" duration="117000" />
+      <workItem from="1662884059564" duration="394000" />
+      <workItem from="1662884491552" duration="453000" />
+      <workItem from="1662885516399" duration="423000" />
+      <workItem from="1662889063005" duration="719000" />
+      <workItem from="1662890532578" duration="1949000" />
+      <workItem from="1662893334458" duration="498000" />
+      <workItem from="1662980467928" duration="18000" />
+      <workItem from="1662983472596" duration="2385000" />
+      <workItem from="1662989370795" duration="830000" />
+      <workItem from="1663040579984" duration="4425000" />
+      <workItem from="1663063496440" duration="11000" />
+      <workItem from="1663066750795" duration="2445000" />
+      <workItem from="1663079653227" duration="2118000" />
+      <workItem from="1663082908528" duration="55000" />
+      <workItem from="1663083347431" duration="991000" />
+      <workItem from="1663085712098" duration="1343000" />
+      <workItem from="1663095761812" duration="1124000" />
+      <workItem from="1663127971596" duration="2837000" />
+      <workItem from="1663152754338" duration="7966000" />
+      <workItem from="1663213450328" duration="1410000" />
+      <workItem from="1663223440627" duration="64000" />
+      <workItem from="1663223849920" duration="2736000" />
+      <workItem from="1663226934590" duration="3738000" />
+      <workItem from="1663232172575" duration="4645000" />
+      <workItem from="1663238750581" duration="3912000" />
+      <workItem from="1663264093371" duration="6678000" />
+      <workItem from="1663293751429" duration="4101000" />
+      <workItem from="1663301316282" duration="5380000" />
+      <workItem from="1663323088285" duration="397000" />
+      <workItem from="1663325136515" duration="242000" />
+      <workItem from="1663325428642" duration="50000" />
+      <workItem from="1663325495654" duration="561000" />
+      <workItem from="1663327232136" duration="521000" />
+      <workItem from="1663328226225" duration="7508000" />
+      <workItem from="1663377819840" duration="44000" />
+      <workItem from="1663396385466" duration="893000" />
+      <workItem from="1663420349213" duration="609000" />
     </task>
     <servers />
   </component>
@@ -141,29 +381,37 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1661992137982">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1663157368388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1661992137982" />
-    <state width="1515" height="109" key="GridCell.Tab.0.bottom" timestamp="1661523015216">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1663157368388" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1663421077525">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="109" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1661523015216" />
-    <state width="1515" height="109" key="GridCell.Tab.0.center" timestamp="1661523015216">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1663421077525" />
+    <state width="1515" height="331" key="GridCell.Tab.0.bottom" timestamp="1663397286318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="109" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1661523015216" />
-    <state width="1515" height="109" key="GridCell.Tab.0.left" timestamp="1661523015216">
+    <state width="1515" height="331" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1663397286318" />
+    <state width="1515" height="331" key="GridCell.Tab.0.center" timestamp="1663397286318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="109" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1661523015216" />
-    <state width="1515" height="109" key="GridCell.Tab.0.right" timestamp="1661523015216">
+    <state width="1515" height="331" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1663397286318" />
+    <state width="1515" height="331" key="GridCell.Tab.0.left" timestamp="1663397286318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="109" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1661523015216" />
+    <state width="1515" height="331" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1663397286318" />
+    <state width="1515" height="331" key="GridCell.Tab.0.right" timestamp="1663397286318">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="331" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1663397286318" />
     <state x="555" y="60" key="SettingsEditor" timestamp="1661435140197">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="60" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1661435140197" />
+    <state x="492" y="184" key="refactoring.ChangeSignatureDialog" timestamp="1662356538909">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="492" y="184" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1662356538909" />
   </component>
 </project>
